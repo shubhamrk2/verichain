@@ -1,6 +1,9 @@
 import React from 'react'
 import SignInUp from './SignInUp';
-import Login from './Login';
+import LoginStudent from './LoginStudent';
+import SignUpStudent from './SignUpStudent';
+import DashStudent from './DashStudent';
+// import '../assets/css/bootstrap/bootstrap.min.css'
 import {
   BrowserRouter as Router,
   Routes ,
@@ -13,7 +16,9 @@ function Main() {
         <div>
         <Routes >
         <Route path='/' element={<SignInUp/>} />
-        <Route path='/login/:type' element={<Login/>} />
+        <Route path='/loginstudent' element={<LoginStudent/>} />
+        <Route path='/signupstudent' element={<SignUpStudent/>}/>
+        <Route path='/dashstudent' element={<DashStudent />}/>
         </Routes >
         </div>
     </Router>
