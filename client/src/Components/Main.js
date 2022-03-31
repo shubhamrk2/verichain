@@ -1,15 +1,22 @@
 import React from 'react'
 import SignInUp from './SignInUp';
+import Login from './Login';
 import {
-    BrowserRouter,
-    Routes,
-    Route} from "react-router-dom";
+  BrowserRouter as Router,
+  Routes ,
+  Route,
+} from "react-router-dom";
+
 function Main() {
   return (
+    <Router>
         <div>
-            <h1>hello</h1>
-            <SignInUp />
+        <Routes >
+        <Route path='/' element={<SignInUp/>} />
+        <Route path='/login/:type' element={<Login/>} />
+        </Routes >
         </div>
+    </Router>
   )
 }
 

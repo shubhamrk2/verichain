@@ -10,7 +10,9 @@ body{
     justify-content: center;
     overflow: hidden;
 }
-
+.parent-div-signup{
+    display: flex;
+}
 .card{
     display: grid;
     grid-template-columns: 350px;
@@ -27,7 +29,7 @@ body{
 
 .card-image {
     grid-area: image;
-    background: url("/src/images/student-front.jpg");
+    background: url("/images/student-front.jpg");
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
     background-size: cover;
@@ -35,7 +37,7 @@ body{
 
 .card-image2 {
     grid-area: image;
-    background: url("/src/images/institute-front.jpg");
+    background: url("/images/institute-front.jpg");
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
     background-size: cover;
