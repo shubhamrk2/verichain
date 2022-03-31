@@ -1,20 +1,20 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.21 <0.8.17;
+// pragma solidity ^0.8.13;
 
-import "truffle/Assert.sol";
-import "truffle/DeployedAddresses.sol";
-import "../contracts/Contract.sol";
+// import "truffle/Assert.sol";
+// import "truffle/DeployedAddresses.sol";
+// import "../contracts/Contract.sol";
 
-contract TestSimpleStorage {
+// contract TestSimpleStorage {
 
-  function testItStoresAValue() public {
-    Contract simpleStorage = Contract(DeployedAddresses.Contract());
+//   function testItStoresAValue() public {
+//     Contract simpleStorage = Contract(DeployedAddresses.Contract());
 
-    simpleStorage.set(89);
+//     simpleStorage.set(89);
 
-    uint expected = 89;
+//     uint expected = 89;
 
-    Assert.equal(simpleStorage.get(), expected, "It should store the value 89.");
-  }
+//     Assert.equal(simpleStorage.get(), expected, "It should store the value 89.");
+//   }
 
-}
+// }

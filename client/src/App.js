@@ -3,6 +3,7 @@ import hashContract from "./contracts/Contract.json";
 import getWeb3 from "./utils/getWeb3";
 import ipfs from "./ipfs";
 import "./App.css";
+// import Register from "./pages/Student/Register"
 
 class App extends Component {
   state = { ipfsHash: '', web3: null, accounts: null, contract: null, buffer: null };
@@ -41,7 +42,7 @@ class App extends Component {
     const { accounts, contract } = this.state;
 
     // Stores a given value, 5 by default.
-    await contract.methods.set(5).send({ from: accounts[0] });
+    // await contract.methods.set(5).send({ from: accounts[0] });
 
     // Get the value from the contract to prove it worked.
     const ipfsHash = await contract.methods.get().call({from: accounts[0]});
@@ -58,7 +59,7 @@ class App extends Component {
     reader.readAsArrayBuffer(file);
     reader.onloadend = () => {
       this.setState({ buffer: Buffer(reader.result) });
-      console.log('buffer', this.state.buffer);
+      // console.log('buffer', this.state.buffer);
     }
   };
 
@@ -70,7 +71,8 @@ class App extends Component {
         console.log(error);
         return
       }
-      console.log(this.state.contract.methods.get());
+      // console.log(this.state.contract.methods.get());
+      
       await this.state.contract.methods.set(result[0].hash).send({ from: this.state.account }).then((r) => {
         return this.setState({ ipfsHash: result[0].hash });
       })
@@ -87,13 +89,15 @@ class App extends Component {
       <div className="App">
         <h1>VeriChain</h1>
         <p>This document is stored on IPFS and the Ethereum Blockchain</p>
+        {/* eslint-disable-next-line */}
         {this.state.ipfsHash && (<img src={`https://ipfs.io/ipfs/${this.state.ipfsHash}`} alt="image"/>)}
         <h2>Upload Document</h2>
         <form onSubmit={this.onSubmit}>
           <input type='file' onChange={this.captureFile}/>
           <input type='submit'/>
         </form>
-        <p>{this.state.ipfsHash}</p>
+        {/* <button><a href={`https://ipfs.io/ipfs/${this.state.ipfsHash}`} target="_blank"></a>View</button> */}
+        {/* <p>Hash: {this.state.ipfsHash}</p> */}
       </div>
     );
   }
