@@ -13,14 +13,12 @@ import {
 function Main() {
   return (
     <Router>
-        <div>
         <Routes >
         <Route path='/' element={<SignInUp/>} />
         <Route path='/loginstudent' element={<LoginStudent/>} />
         <Route path='/signupstudent' element={<SignUpStudent/>}/>
         <Route path='/dashstudent' element={<DashStudent />}/>
         </Routes >
-        </div>
     </Router>
   )
 }

@@ -5,7 +5,11 @@ import ipfs from "../ipfs";
 // import "../App.css"; 
 
 class DashStudent extends Component {
-  state = { ipfsHash: '', web3: null, accounts: null, contract: null, buffer: null };
+  constructor(props){
+    super(props);
+    this.state = { ipfsHash: '', web3: null, accounts: null, contract: null, buffer: null };
+
+  }
   
   componentDidMount = async () => {
     try {

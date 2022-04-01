@@ -6,7 +6,7 @@ function SignUpStudent() {
     <div>
         <div className="container" id="container">
         <div className="form-container sign-up-container">
-            <form method="POST" action="{{route('student.register')}}" id="form">
+            <form method="POST" action="" id="form">
                 <h1>Create Account</h1>
                 <div className="social-container">
                     <a href="/login/google" className="social"><FaGoogle/></a>
