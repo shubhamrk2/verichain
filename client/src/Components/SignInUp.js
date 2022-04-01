@@ -2,6 +2,9 @@ import React from 'react';
 import '../assets/css/SignInUp.css'
 import { Link } from 'react-router-dom';
 function SignInUp() {
+  const len = (window.location.href).split("/");
+  console.log(len)
+  if(len[3] === ""){
   return (
     <div className='parent-div-signup'>
     	<Link to="/loginstudent" className="card">
@@ -18,6 +21,9 @@ function SignInUp() {
         </Link>
     </div>
   )
+  }
+  else
+  return (<></>);
 }
 
 export default SignInUp;

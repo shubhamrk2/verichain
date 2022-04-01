@@ -8,17 +8,15 @@ class DashStudent extends Component {
   constructor(props){
     super(props);
     this.state = { ipfsHash: '', web3: null, accounts: null, contract: null, buffer: null };
-
   }
   
-  componentDidMount = async () => {
+  async componentDidMount() {
     try {
       // Get network provider and web3 instance.
       const web3 = await getWeb3();
-
       // Use web3 to get the user's accounts.
       const accounts = await web3.eth.getAccounts();
-
+      console.log(accounts)
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = hashContract.networks[networkId];
@@ -52,6 +50,7 @@ class DashStudent extends Component {
 
     // Update state with the result.
     this.setState({ ipfsHash });
+    return ipfsHash;
   };
 
   captureFile(event){
