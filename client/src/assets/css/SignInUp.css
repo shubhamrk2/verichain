@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 body{
-    background: url("/images/background-light.jpg");
+    /* background: url("/images/background-light.jpg"); */
+    /* background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648781831/Verichain/bg_xmgzt8.jpg"); */
+    /* background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648781946/Verichain/bg1_hticcr.jpg"); */
+    background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648782016/Verichain/bg2_tpw7iq.jpg");
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -10,6 +13,8 @@ body{
     justify-content: center;
     overflow: hidden;
 }
+
+
 .parent-div-signup{
     display: flex;
 }

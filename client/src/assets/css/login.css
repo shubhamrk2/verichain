@@ -11,7 +11,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648756258/Verichain/background_sod9hd.jpg");
+    /* background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648756258/Verichain/background_sod9hd.jpg"); */
     overflow: hidden;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;

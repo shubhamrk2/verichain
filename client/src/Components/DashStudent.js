@@ -85,7 +85,7 @@ class DashStudent extends Component {
       return <div>Please wait! Loading Web3, accounts, and contract...</div>;
     }
     return (
-      <div className="App">
+      <div className="dash">
         <h1>VeriChain</h1>
         <p>This document is stored on IPFS and the Ethereum Blockchain</p>
         {/* eslint-disable-next-line */}
