@@ -2,6 +2,7 @@ import React from 'react'
 import "../assets/css/login.css";
 // import  FontAwesome from 'react-fontawesome';
 import { FaGoogle } from "@react-icons/all-files/fa/FaGoogle";
+// import {FaGithub} from "@react-icons/all-files/fa/FaGithub"
 // import '../';
 import { Link } from 'react-router-dom';
 function LoginStudent() {
@@ -15,6 +16,7 @@ function LoginStudent() {
                     {/* <FontAwesome name='google'/> */}
                     {/* <i className="fa fa-google-plus-g"></i> */}
                     <FaGoogle/>
+                    {/* <FaGithub/> */}
                 </div>
                 <span>or use your account</span>
                 <input id="lemail" name="email" type="email" required placeholder="Email" />

@@ -7,18 +7,17 @@ import ipfs from "../ipfs";
 class DashStudent extends Component {
   constructor(props){
     super(props);
-    this.state = { ipfsHash: '', web3: null, accounts: null, contract: null, buffer: null };
-
+    this.state = { ipfsHash: '', web3: null, accounts: null, contract: null, buffer: null};
   }
   
   componentDidMount = async () => {
     try {
       // Get network provider and web3 instance.
       const web3 = await getWeb3();
-
+        // console.log("gaurav");
       // Use web3 to get the user's accounts.
       const accounts = await web3.eth.getAccounts();
-
+      console.log(accounts);
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = hashContract.networks[networkId];
@@ -30,6 +29,7 @@ class DashStudent extends Component {
       this.onSubmit = this.onSubmit.bind(this);
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
+      
       this.setState({ web3, accounts, contract: instance }, this.runMain);
       this.setState({ account: accounts[0] });
     } catch (error) {
