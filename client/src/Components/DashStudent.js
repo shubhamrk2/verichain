@@ -11,6 +11,11 @@ class DashStudent extends Component {
   }
   
   async componentDidMount() {
+      console.log(localStorage.getItem("reload") == 1);
+      if(localStorage.getItem("reload") == 1){
+          localStorage.setItem("reload",0);
+          window.location.reload();
+      }
     try {
       // Get network provider and web3 instance.
       const web3 = await getWeb3();
@@ -90,18 +95,21 @@ class DashStudent extends Component {
       return <div>Please wait! Loading Web3, accounts, and contract...</div>;
     }
     return (
+      <div>
       <div className="dash">
-        <h1>VeriChain</h1>
+        <img src="https://res.cloudinary.com/therealdaaku/image/upload/v1646831444/Verichain/VeriChain-logo-transparent-black_jbkiue.png" alt="logo" className="logo-vc"></img><h1>VeriChain</h1>
         <p>This document is stored on IPFS and the Ethereum Blockchain</p>
         {/* eslint-disable-next-line */}
-        {this.state.ipfsHash && (<img src={`https://ipfs.io/ipfs/${this.state.ipfsHash}`} alt="image"/>)}
+        
         <h2>Upload Document</h2>
         <form onSubmit={this.onSubmit}>
           <input type='file' onChange={this.captureFile}/>
           <input type='submit'/>
         </form>
+        {this.state.ipfsHash && (<img src={`https://ipfs.io/ipfs/${this.state.ipfsHash}`} alt="image"/>)}
         {/* <button><a href={`https://ipfs.io/ipfs/${this.state.ipfsHash}`} target="_blank"></a>View</button> */}
         {/* <p>Hash: {this.state.ipfsHash}</p> */}
+      </div>
       </div>
     );
   }
