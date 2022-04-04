@@ -13,9 +13,9 @@ import {
 } from "react-router-dom";
 
 function Main() {
-    useEffect( ()=>{
-        localStorage.setItem("reload",1);
-    });
+    // useEffect( ()=>{
+    //     localStorage.setItem("reload",1);
+    // });
   return (
     <>
     <Router>

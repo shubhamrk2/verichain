@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 function LoginStudent() {
   return (
     <div className='login-student'>
-    <div className="container" id="container">
+    <div className="signin-container" id="container">
         <div className="form-container sign-in-container">
-            <form id="lform" action="{{route('student.login')}}" method="POST">
+            <form id="lform" action="#" method="POST">
                 <br></br>
-                <h1>Sign in</h1>
+                <h1 id='login-page'>Sign in</h1>
                 <div className="social-container">
                    <a href='#'> 
                     <FaGoogle/>
@@ -19,7 +19,7 @@ function LoginStudent() {
                 <input id="lemail" name="email" type="email" required placeholder="Email" />
                 <input id="lpassword" name="password" type="password" required placeholder="Password" />
                 <br></br>
-                <a href="{{route('password.request')}}" >Forgot your password?</a><br/>
+                <a href="#" className='forgot'>Forgot your password?</a><br/>
                 <Link to="/dashstudent"><button type="submit" id="signinbutton" className='signInButton'>Sign In</button></Link>
                 <p>Don't have an account with us? Create one!</p>
                 <Link to='/signupstudent'><button type='submit' id="signUp" className='signUpButton'>Sign Up</button></Link>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import hashContract from "../contracts/Contract.json";
 import getWeb3 from "../utils/getWeb3";
 import ipfs from "../ipfs";
+import Navbar from "./Navbar";
 // import "../App.css"; 
 
 class DashStudent extends Component {
@@ -11,11 +12,11 @@ class DashStudent extends Component {
   }
   
   async componentDidMount() {
-      console.log(localStorage.getItem("reload") == 1);
-      if(localStorage.getItem("reload") == 1){
-          localStorage.setItem("reload",0);
-          window.location.reload();
-      }
+      // console.log(localStorage.getItem("reload") == 1);
+      // if(localStorage.getItem("reload") == 1){
+      //     localStorage.setItem("reload",0);
+      //     window.location.reload();
+      // }
     try {
       // Get network provider and web3 instance.
       const web3 = await getWeb3();
@@ -96,6 +97,7 @@ class DashStudent extends Component {
     }
     return (
       <div>
+        <Navbar />
       <div className="dash">
         <img src="https://res.cloudinary.com/therealdaaku/image/upload/v1646831444/Verichain/VeriChain-logo-transparent-black_jbkiue.png" alt="logo" className="logo-vc"></img><h1>VeriChain</h1>
         <p>This document is stored on IPFS and the Ethereum Blockchain</p>
