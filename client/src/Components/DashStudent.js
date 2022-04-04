@@ -99,7 +99,7 @@ class DashStudent extends Component {
       <div>
         <Navbar />
       <div className="dash">
-        <img src="https://res.cloudinary.com/therealdaaku/image/upload/v1646831444/Verichain/VeriChain-logo-transparent-black_jbkiue.png" alt="logo" className="logo-vc"></img><h1>VeriChain</h1>
+        <h1>VeriChain</h1>
         <p>This document is stored on IPFS and the Ethereum Blockchain</p>
         {/* eslint-disable-next-line */}
         
