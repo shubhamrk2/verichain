@@ -1,272 +1,403 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* Univeral */
 * {
-	font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /* SignInUp */
 
 .parent-div-signup {
-	display: flex;
+  display: flex;
 }
 
 #signInUp {
-	color: black;
+  color: black;
 }
 
 #myVideo {
-	position: fixed;
-	right: 0;
-	bottom: 0;
-	top: 0;
-	min-width: 100%;
-	min-height: 100%;
-	z-index: 1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1;
 }
 
 .content {
-	display: flex;
-	position: absolute;
-	top: 0;
-	/* left: 0; */
-	/* right: 0; */
-	color: #f1f1f1;
-	z-index: 2;
+  display: flex;
+  position: absolute;
+  top: 0;
+  /* left: 0; */
+  /* right: 0; */
+  color: #f1f1f1;
+  z-index: 2;
 }
 
 .card {
-	display: grid;
-	grid-template-columns: 350px;
-    grid-template-rows: 360px 60px 20px;
-    grid-template-areas: "image" "text";
-    border-radius: 18px;
-    background: white;
-    box-shadow: 5px 5px 15px rgba(0,227,10,0.75);
-    text-align: center;
-    margin-right: 45px;
-    transition: 0.5s ease;
-    cursor: pointer;
+  display: grid;
+  grid-template-columns: 350px;
+  grid-template-rows: 360px 60px 20px;
+  grid-template-areas: "image" "text";
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 227, 10, 0.75);
+  text-align: center;
+  margin-right: 45px;
+  transition: 0.5s ease;
+  cursor: pointer;
 }
 
 .card-image {
-    grid-area: image;
-    background: url("../images/student-front.jpg");
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-    background-size: cover;
+  grid-area: image;
+  background: url("../images/student-front.jpg");
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  background-size: cover;
 }
 
 .card-image2 {
-    grid-area: image;
-    background: url("../images/institute-front.jpg");
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-    background-size: cover;
+  grid-area: image;
+  background: url("../images/institute-front.jpg");
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  background-size: cover;
 }
 
 .card-text {
-    grid-area: text;
+  grid-area: text;
 }
 
 .card:hover {
-    transform: scale(1.2);
-    box-shadow: 5px 5px 15px rgba(0,227,10,0.75);
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px rgba(0, 227, 10, 0.75);
 }
 
 /* Login Student */
 
 .login-student {
-	background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648898300/Verichain/5816231_cu3cmb.jpg");
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+  background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648898300/Verichain/5816231_cu3cmb.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .signin-container {
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-	0 10px 10px rgba(0,0,0,0.22);
-	position: relative;
-	overflow: hidden;
-	width: 700px;
-	max-width: 100%;
-	max-height: 480px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 700px;
+  max-width: 100%;
+  max-height: 480px;
 }
 
 .form-container {
-	position: relative;
-	top: 0;
-	height: 100%;
-	transition: all 0.6s ease-in-out;
+  position: relative;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
 }
 
 .sign-in-container {
-	left: 0;
-	width: 100%;
-	z-index: 2;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 form {
-	background-color: #FFFFFF;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 50px;
-	height: 90%;
-	text-align: center;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 90%;
+  text-align: center;
 }
 
 input {
-	background-color: #eee;
-	border: none;
-    border-radius: 25px;
-	padding: 12px 15px;
-	margin: 8px 0;
-	width: 80%;
+  background-color: #eee;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 80%;
 }
 
-button {
-	border-radius: 25px;
-	border: 3px solid #192E92;
-	background-color: #192E92;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+button .signInButton .signUpButton{
+  border-radius: 25px;
+  border: 3px solid #192e92;
+  background-color: #192e92;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
 }
 
 button:active {
-	transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 button:focus {
-	outline: none;
+  outline: none;
 }
 
 .shift {
-	border: 3px solid white;
-	margin-top: 25px;
-	color: #eee;
-	text-decoration: none;
+  border: 3px solid white;
+  margin-top: 25px;
+  color: #eee;
+  text-decoration: none;
 }
 
 .inside-button {
-	color: white;
-	font-size: 14px;
+  color: white;
+  font-size: 14px;
 }
 
 .social-container {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 
 span {
-	margin-bottom: -20px;
+  margin-bottom: -20px;
 }
 
 a.forgot {
-	color: black;
+  color: black;
 }
 
-a:on-click{
-	text-decoration: none;
-	color: black;
+a:on-click {
+  text-decoration: none;
+  color: black;
 }
 
 /* SignUp Student */
 
 .signup-container {
-	background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648898300/Verichain/5816231_cu3cmb.jpg");
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+  background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648898300/Verichain/5816231_cu3cmb.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .sign-up-container {
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-	0 10px 10px rgba(0,0,0,0.22);
-	position: relative;
-	overflow: hidden;
-	width: 700px;
-	max-width: 100%;
-	max-height: 480px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 700px;
+  max-width: 100%;
+  max-height: 480px;
 }
 
 #signupcontainer {
-	left: 0;
-	width: 100%;
-	z-index: 2;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 span.signup {
-	margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 #signup-button {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 
 /* Student Dashboard */
 
 .logo {
-	max-width: 50px;
-	max-height: 50px;
-	position: relative;
+  max-width: 50px;
+  max-height: 50px;
+  /* position: relative; */
 }
 
 .logoname {
-	margin-left: 50px;
-	position: fixed;
-	letter-spacing: 1px;
-	color: white;
-	-webkit-text-stroke: 1.2px red;
-	text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff;
+  margin-left: 50px;
+  position: fixed;
+  letter-spacing: 1px;
+  color: white;
+  -webkit-text-stroke: 2px black;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
 }
 
 .navbar {
-	display: flex;
-	background-color: red;
-	height: 60px;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0px 50px 0px 100px;
+  display: flex;
+  background-color: red;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px 0px 50px;
 }
 
-ul.studentD {
-	display: flex;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-ul li a{
-	color: black;
-	font-size: 18px;
-	font-weight: 500;
-	letter-spacing: 0.5px;
-	/* background: white;
-	padding: 5px;
-	border-radius: 5px; */
+ul li a {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  /* background: white; */
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+ul li a:hover {
+  background: white;
+  color: #1b1b1b;
+  text-shadow: 0 0 3px red;
 }
 
 ul li {
-	margin: 0 15px ;
+  margin: 0 12px;
 }
 
+.menuBtn {
+  display: none;
+}
+
+#click {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  /* #click:checked ~ .menuBtn:before {
+		content: "\f00d";
+	} */
+
+  ul {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    background: black;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    /* text-align: center; */
+    transition: all 0.3s ease-in;
+  }
+
+  #click:checked ~ ul {
+    left: 0;
+  }
+
+  ul li {
+    margin: 40px 0;
+  }
+
+  ul li a {
+    font-size: 23px;
+    display: block;
+  }
+
+  ul li a:hover {
+    background: none;
+    color: white;
+    transition: none;
+    text-shadow: 0 0 3px red, 0 0 8px red, 0 0 15px red, 0 0 21px red;
+  }
+
+  .menuBtn {
+    display: block;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 450px) {
+  .navbar {
+    padding: 0px 20px 0px 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .logoname {
+    display: none;
+  }
+}
+
+@media (max-height: 450px) {
+}
+
+/* Profile */
+
+.studentProfile {
+  background: url("../images/studentprofile.jpg");
+  height: 100vh;
+  overflow: scroll;
+}
+
+.studentContainer {
+  display: flex;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 50px;
+  color: white;
+  /* z-index: 2; */
+}
+
+.studentCard {
+  display: grid;
+  grid-template-columns: 350px;
+  grid-template-rows: 220px 320px;
+  grid-template-areas: "image" "text";
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(227, 53, 0, 0.75);
+  text-align: center;
+	align-items: center;
+  margin-right: 45px;
+}
+
+.studentAvatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 2px solid none;
+  border-radius: 50%;
+}
+
+.studentCardBody {
+	color: black;
+	margin: 8px;
+	/* padding: 5px 5px 5px 5px; */
+}
+
+button .dropdown {
+	background-color: red;
+	border-radius: 25px;
+}
+
+.studentGeneral {
+	display: grid;
+  grid-template-columns: 1000px;
+  grid-template-rows: 180px 260px;
+  grid-template-areas: "image" "text";
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(227, 53, 0, 0.75);
+  text-align: center;
+	align-items: center;
+  margin-right: 45px;
+}

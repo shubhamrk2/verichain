@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import hashContract from "../contracts/Contract.json";
 import getWeb3 from "../utils/getWeb3";
 import ipfs from "../ipfs";
-import Navbar from "./Navbar";
+import StudentNavbar from "./StudentNavbar";
 // import "../App.css"; 
 
-class DashStudent extends Component {
+class StudentUpload extends Component {
   constructor(props){
     super(props);
     this.state = { ipfsHash: '', web3: null, accounts: null, contract: null, buffer: null };
@@ -97,7 +97,7 @@ class DashStudent extends Component {
     }
     return (
       <div>
-        <Navbar />
+        <StudentNavbar />
       <div className="dash">
         <h1>VeriChain</h1>
         <p>This document is stored on IPFS and the Ethereum Blockchain</p>
@@ -117,4 +117,4 @@ class DashStudent extends Component {
   }
 }
 
-export default DashStudent;
+export default StudentUpload;

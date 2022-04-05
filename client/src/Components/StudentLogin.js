@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGoogle } from "@react-icons/all-files/fa/FaGoogle";
 import { Link } from 'react-router-dom';
-function LoginStudent() {
+function StudentLogin() {
   return (
     <div className='login-student'>
     <div className="signin-container" id="container">
@@ -20,7 +20,7 @@ function LoginStudent() {
                 <input id="lpassword" name="password" type="password" required placeholder="Password" />
                 <br></br>
                 <a href="#" className='forgot'>Forgot your password?</a><br/>
-                <Link to="/dashstudent"><button type="submit" id="signinbutton" className='signInButton'>Sign In</button></Link>
+                <Link to="/studentprofile"><button type="submit" id="signinbutton" className='signInButton'>Sign In</button></Link>
                 <p>Don't have an account with us? Create one!</p>
                 <Link to='/signupstudent'><button type='submit' id="signUp" className='signUpButton'>Sign Up</button></Link>
             </form>
@@ -34,4 +34,4 @@ function LoginStudent() {
   )
 }
 
-export default LoginStudent
+export default StudentLogin
