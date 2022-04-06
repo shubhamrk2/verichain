@@ -99,16 +99,19 @@ class StudentUpload extends Component {
       <div>
         <StudentNavbar />
       <div className="dash">
-        <h1>VeriChain</h1>
         <p>This document is stored on IPFS and the Ethereum Blockchain</p>
         {/* eslint-disable-next-line */}
         
-        <h2>Upload Document</h2>
-        <form onSubmit={this.onSubmit}>
-          <input type='file' onChange={this.captureFile}/>
-          <input type='submit'/>
-        </form>
+        <h2 className="uploadDocText">Upload Document</h2>
+        <form className="uploadForm" onSubmit={this.onSubmit}>
+          <input className="fileUpload" type='file' onChange={this.captureFile}/>
+          <div className="viewDoc">
         {this.state.ipfsHash && (<img src={`https://ipfs.io/ipfs/${this.state.ipfsHash}`} alt="image"/>)}
+        </div>
+          <input className="fileUploadBtn" type='submit'/>
+          
+        </form>
+        
         {/* <button><a href={`https://ipfs.io/ipfs/${this.state.ipfsHash}`} target="_blank"></a>View</button> */}
         {/* <p>Hash: {this.state.ipfsHash}</p> */}
       </div>

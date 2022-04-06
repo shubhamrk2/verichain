@@ -132,7 +132,7 @@ input {
   width: 80%;
 }
 
-button .signInButton .signUpButton{
+button {
   border-radius: 25px;
   border: 3px solid #192e92;
   background-color: #192e92;
@@ -344,14 +344,14 @@ ul li {
 .studentProfile {
   background: url("../images/studentprofile.jpg");
   height: 100vh;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .studentContainer {
   display: flex;
   position: absolute;
   margin-top: 50px;
-  margin-left: 50px;
+  margin-left: 120px;
   color: white;
   /* z-index: 2; */
 }
@@ -380,8 +380,15 @@ ul li {
 
 .studentCardBody {
 	color: black;
-	margin: 8px;
+	margin-top: -60px;
+	/* margin: 8px; */
 	/* padding: 5px 5px 5px 5px; */
+}
+
+.cardLowerBody {
+	text-align: left;
+	margin-top: 50px;
+	margin-left: 35px;
 }
 
 button .dropdown {
@@ -391,13 +398,84 @@ button .dropdown {
 
 .studentGeneral {
 	display: grid;
-  grid-template-columns: 1000px;
-  grid-template-rows: 180px 260px;
+  grid-template-columns: 900px;
+  grid-template-rows: 50px 450px;
   grid-template-areas: "image" "text";
   border-radius: 18px;
   background: white;
   box-shadow: 5px 5px 15px rgba(227, 53, 0, 0.75);
   text-align: center;
-	align-items: center;
+	/* align-items: center; */
   margin-right: 45px;
+}
+
+.studentGeneralBody {
+	color: black;
+	margin-left: 35px;
+	text-align: left;
+}
+
+.generalBody {
+	margin-left: -35px;
+	margin-top: -12px;
+}
+
+.generalLowerBody {
+	margin-top: 1rem;
+}
+
+.tableBody {
+	color: black;
+	text-align: left;
+	/* margin-left: 30px; */
+	border-collapse:separate;
+  border-spacing:36px 4px;
+}
+
+th {
+	font-weight: 600;
+}
+
+td {
+	font-weight: 700;
+}
+
+/* Student Upload */
+
+.fileUpload {
+	width: 35%;
+}
+
+.dash {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.uploadForm {
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0, 0, 0, 0.3);
+	border: 2px solid black;
+	border-radius: 15px;
+	max-width: 100vw;
+	/* max-height: 100vh; */
+	width: fit-content;
+	height: fit-content;
+	align-items: center;
+	justify-content: center;
+}
+
+.fileUploadBtn {
+	width: 40%;
+}
+
+/* .viewDoc {
+	max-width: 300px;
+	max-height: fit-content;
+} */
+
+.uploadDocText {
+	margin-top: 0;
 }
