@@ -365,7 +365,7 @@ ul li {
   background: white;
   box-shadow: 5px 5px 15px rgba(227, 53, 0, 0.75);
   text-align: center;
-	align-items: center;
+  align-items: center;
   margin-right: 45px;
 }
 
@@ -379,25 +379,25 @@ ul li {
 }
 
 .studentCardBody {
-	color: black;
-	margin-top: -60px;
-	/* margin: 8px; */
-	/* padding: 5px 5px 5px 5px; */
+  color: black;
+  margin-top: -60px;
+  /* margin: 8px; */
+  /* padding: 5px 5px 5px 5px; */
 }
 
 .cardLowerBody {
-	text-align: left;
-	margin-top: 50px;
-	margin-left: 35px;
+  text-align: left;
+  margin-top: 50px;
+  margin-left: 35px;
 }
 
 button .dropdown {
-	background-color: red;
-	border-radius: 25px;
+  background-color: red;
+  border-radius: 25px;
 }
 
 .studentGeneral {
-	display: grid;
+  display: grid;
   grid-template-columns: 900px;
   grid-template-rows: 50px 450px;
   grid-template-areas: "image" "text";
@@ -405,70 +405,70 @@ button .dropdown {
   background: white;
   box-shadow: 5px 5px 15px rgba(227, 53, 0, 0.75);
   text-align: center;
-	/* align-items: center; */
+  /* align-items: center; */
   margin-right: 45px;
 }
 
 .studentGeneralBody {
-	color: black;
-	margin-left: 35px;
-	text-align: left;
+  color: black;
+  margin-left: 35px;
+  text-align: left;
 }
 
 .generalBody {
-	margin-left: -35px;
-	margin-top: -12px;
+  margin-left: -35px;
+  margin-top: -12px;
 }
 
 .generalLowerBody {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .tableBody {
-	color: black;
-	text-align: left;
-	/* margin-left: 30px; */
-	border-collapse:separate;
-  border-spacing:36px 4px;
+  color: black;
+  text-align: left;
+  /* margin-left: 30px; */
+  border-collapse: separate;
+  border-spacing: 36px 4px;
 }
 
 th {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 td {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 /* Student Upload */
 
 .fileUpload {
-	width: 35%;
+  width: 35%;
 }
 
 .dash {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .uploadForm {
-	display: flex;
-	flex-direction: column;
-	background-color: rgba(0, 0, 0, 0.3);
-	border: 2px solid black;
-	border-radius: 15px;
-	max-width: 100vw;
-	/* max-height: 100vh; */
-	width: fit-content;
-	height: fit-content;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid black;
+  border-radius: 15px;
+  max-width: 100vw;
+  /* max-height: 100vh; */
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
 }
 
 .fileUploadBtn {
-	width: 40%;
+  width: 40%;
 }
 
 /* .viewDoc {
@@ -477,5 +477,5 @@ td {
 } */
 
 .uploadDocText {
-	margin-top: 0;
+  margin-top: 0;
 }
