@@ -132,17 +132,17 @@ input {
   width: 80%;
 }
 
-button {
+.signInButton, .signUpButton {
   border-radius: 25px;
   border: 3px solid #192e92;
   background-color: #192e92;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
-  padding: 12px 45px;
+  padding: 10px 40px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: transform 80ms ease-in;
+  transition: 80ms ease-in;
 }
 
 button:active {
@@ -153,20 +153,41 @@ button:focus {
   outline: none;
 }
 
-.shift {
-  border: 3px solid white;
-  margin-top: 25px;
-  color: #eee;
-  text-decoration: none;
+.signInButton:hover, .signUpButton:hover {
+	background-color: aquamarine;
+	color: black;
+	cursor: pointer;
+}
+.shiftSt:hover{
+	color: black;
+	background-color: aquamarine;
+	cursor: pointer;
 }
 
-.inside-button {
+.shiftSt {
+		font-size: 14px;
+		background-color: #192e92;
+		border: 3px solid #192e92;
+		border-radius: 25px;
+		padding: 12px 45px;
+		margin-top: 25px;
+		text-decoration: none;
+		border: 3px solid white;
+		cursor: pointer;
+}
+
+.inside-buttonSt {
   color: white;
-  font-size: 14px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.inside-buttonSt:hover {
+	color: black;
 }
 
 .social-container {
-  margin-top: 10px;
+  margin-top: -10px;
 }
 
 span {
@@ -215,7 +236,22 @@ span.signup {
 }
 
 #signup-button {
-  margin-top: 10px;
+  margin-bottom: 10px;
+		background-color: #192e92;
+		border-radius: 25px;
+		padding: 10px 40px;
+		border: 3px solid #192e92;
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: bold;
+		margin-top: 10px;
+		transition: all 80ms;
+		color: white;
+}
+
+#signup-button:hover {
+	background-color: aquamarine;
+	color: black;
 }
 
 /* Student Dashboard */
@@ -479,3 +515,149 @@ td {
 .uploadDocText {
   margin-top: 0;
 }
+
+
+/* Institute Login */
+
+.login-institute {
+		background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648898298/Verichain/rm222batch2-mind-03_ugbnwp.jpg");
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.signin-container-ins {
+		background-color: whitesmoke;
+		border-radius: 10px;
+		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+		position: relative;
+		overflow: hidden;
+		width: 700px;
+		max-width: 100%;
+		max-height: 480px;
+	}
+
+	.formcontainer {
+		position: relative;
+		top: 0;
+		height: 100%;
+		transition: all 0.6s ease-in-out;
+	}
+
+	.sign-in-container-ins {
+		left: 0;
+		width: 100%;
+		z-index: 2;
+	}
+
+	.insForm {
+		background-color: whitesmoke;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 0 50px;
+		height: 90%;
+		text-align: center;
+	}
+
+	.signUpBtnIns, .insSignBtn {
+		background-color: rgb(0, 153, 255);
+		border: 3px solid rgb(0, 153, 255);
+		color: black;
+		border-radius: 25px;
+		font-size: 14px;
+		font-weight: bold;
+		padding: 10px 40px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		transition: 80ms ease-in;
+		cursor: pointer;
+	}
+
+	.signUpBtnIns:hover, .insSignBtn:hover{
+		background-color: beige;
+	}
+
+	.shiftIns {
+		color: black;
+		font-size: 14px;
+		background-color: rgb(0, 153, 255);
+		border: 3px solid rgb(0, 153, 255);
+		border-radius: 25px;
+		padding: 12px 45px;
+		margin-top: 25px;
+		text-decoration: none;
+		border: 3px solid rgb(0, 153, 255);
+	}
+
+	.shiftIns:hover {
+		background-color: beige;
+	}
+
+	.inside-button {
+		color: black;
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.social-container-ins {
+		margin-top: -10px;
+	}
+
+	/* SignUp Institute */
+
+	.signup-container-ins {
+		background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648898298/Verichain/rm222batch2-mind-03_ugbnwp.jpg");
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.sign-up-container-ins {
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+		position: relative;
+		overflow: hidden;
+		width: 700px;
+		max-width: 100%;
+		max-height: 480px;
+	}
+	
+	#signupcontainer {
+		left: 0;
+		width: 100%;
+		z-index: 2;
+	}
+
+	span.signup {
+		margin-bottom: 0px;
+	}
+
+	#signup-buttonIns {
+		margin-bottom: 10px;
+		background-color: rgba(0, 153, 255);
+		border-radius: 25px;
+		padding: 10px 40px;
+		border: 3px solid rgba(0, 153, 255);
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: bold;
+		margin-top: 10px;
+		transition: all 80ms;
+	}
+
+	#signup-buttonIns:hover {
+		background-color: beige;
+	}
+
+	/* .shift */

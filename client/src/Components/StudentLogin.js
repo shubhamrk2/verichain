@@ -20,7 +20,7 @@ function StudentLogin() {
                 <input id="lpassword" name="password" type="password" required placeholder="Password" />
                 <br></br>
                 <a href="#" className='forgot'>Forgot your password?</a><br/>
-                <Link to="/studentprofile"><button type="submit" id="signinbutton" className='signInButton'>Sign In</button></Link>
+                <Link to="/studentprofile"><button type="submit" id="signinbutton" className='signInButton'>Sign in</button></Link>
                 <p>Don't have an account with us? Create one!</p>
                 <Link to='/signupstudent'><button type='submit' id="signUp" className='signUpButton'>Sign Up</button></Link>
             </form>
@@ -28,7 +28,7 @@ function StudentLogin() {
         
     </div>
     <footer>
-        <button className="shift"><a href="/" className="inside-button">HOME</a></button>
+        <button className="shiftSt"><a href="/" className="inside-buttonSt">HOME</a></button>
     </footer>
     </div>
   )

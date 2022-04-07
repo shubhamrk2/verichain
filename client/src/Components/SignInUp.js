@@ -16,7 +16,7 @@ function SignInUp() {
             <h1 id='signInUp'>STUDENT</h1>
         </div>
         </Link>
-        <Link to="/logininstitute" className="card">
+        <Link to="/institutelogin" className="card">
         <div className="card-image2"></div>
         <div className="card-text">
             <h1 id='signInUp'>INSTITUTE</h1>
