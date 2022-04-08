@@ -1,0 +1,23 @@
+.navbar-dropdown{
+    position: relative;
+    width: 20px;
+}
+.navbar-dropdown-inner{
+    display: none;
+    position: absolute;
+    width: max-content;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: lightpink;
+    flex-direction: column;
+    z-index: 5;
+}
+.navbar-dropdown-inner li{
+    width: 100%;
+    margin: 0;
+    line-height: 40px;
+}
+.navbar-dropdown:hover .navbar-dropdown-inner{
+    display: unset;
+}

@@ -9,7 +9,7 @@ function SignInUp() {
         <source src={background} type='video/mp4'/>
         Your browser does not support this video tag.
         </video>
-        <div className='content'>
+        <div className='index-content'>
     	<Link to="/loginstudent" className="card">
         <div className="card-image"></div>
         <div className="card-text">
