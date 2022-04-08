@@ -2,6 +2,7 @@ import React from 'react'
 import "../assets/css/Main.css";
 import {FaBars} from "@react-icons/all-files/fa/FaBars";
 import {BsFillCaretDownFill} from "@react-icons/all-files/bs/BsFillCaretDownFill"
+import "../assets/css/navbar.css"
 function StudentNavbar() {
   return (
     <>
@@ -13,7 +14,13 @@ function StudentNavbar() {
           <li><a href='/studentprofile'>Home</a></li>
           <li><a href='/studentupload'>Upload</a></li>
           <li><a href='/mydocuments'>My Documents</a></li>
-          <li><a href='#'><BsFillCaretDownFill/></a></li>
+          <li className='navbar-dropdown'>
+            <BsFillCaretDownFill/>
+            <ul className='navbar-dropdown-inner'>
+              <li><a href='/studentprofile'>My Profile</a></li>
+              <li><a href='/'>Logout</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </>
