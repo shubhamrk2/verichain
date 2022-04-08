@@ -6,7 +6,7 @@ function StudentNavbar() {
   return (
     <>
       <div className='navbar'>
-        <img src='https://res.cloudinary.com/therealdaaku/image/upload/v1646831444/Verichain/VeriChain-logo-transparent-black_jbkiue.png' className='logo'></img><div className='logoname'><h1>VeriChain</h1></div>
+        <img src='https://res.cloudinary.com/therealdaaku/image/upload/v1646831444/Verichain/VeriChain-logo-transparent-black_jbkiue.png' className='logo'></img>
         <input type='checkbox' id='click'></input>
         <label for="click"><FaBars className='menuBtn'></FaBars></label>
         <ul>

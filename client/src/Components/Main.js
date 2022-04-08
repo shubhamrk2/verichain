@@ -14,7 +14,8 @@ import {
 } from "react-router-dom";
 import StudentMyDocuments from './StudentMyDocuments';
 import StudentProfile from './StudentProfile';
-import InstituteSignUp from "./InstituteSignUp"
+import InstituteSignUp from "./InstituteSignUp";
+import InstituteProfile from "./InstituteProfile"
 
 function Main() {
     // useEffect( ()=>{
@@ -34,6 +35,7 @@ function Main() {
         <Routes>
           <Route exact path='/institutelogin' element={<InstituteLogin />}/>
           <Route exact path='/institutesignup' element={<InstituteSignUp/>}/>
+          <Route exact path='/instituteprofile' element={<InstituteProfile />} />
         </Routes>
     </Router>
     </>
