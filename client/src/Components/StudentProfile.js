@@ -4,6 +4,7 @@ import propic from "../assets/images/institute-front.jpg";
 import { TextField } from '@mui/material';
 import '../assets/js/studentProfile.js'
 import '../assets/css/studentProfile.css'
+import {FaEdit} from "@react-icons/all-files/fa/FaEdit"
 function StudentProfile() {
   return (
     <div className='studentProfile'>
@@ -24,6 +25,7 @@ function StudentProfile() {
       <div className='studentGeneral'>
         <div className='studentGeneralBody'>
           <h2>Details</h2>
+          <button className='edit' type='submit'><FaEdit/></button>
           <hr className='generalBody'></hr>
         </div>
         <div className='generalLowerBody'>

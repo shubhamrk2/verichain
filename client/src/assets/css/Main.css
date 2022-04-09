@@ -256,6 +256,12 @@ span.signup {
 
 /* Student Dashboard */
 
+.edit {
+	float: right;
+	margin-top: -55px;
+	margin-right: 25px;
+}
+
 .logo {
   max-width: 50px;
   max-height: 50px;
