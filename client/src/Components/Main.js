@@ -16,6 +16,7 @@ import StudentMyDocuments from './StudentMyDocuments';
 import StudentProfile from './StudentProfile';
 import InstituteSignUp from "./InstituteSignUp";
 import InstituteProfile from "./InstituteProfile"
+import InstituteRegisteredStudents from './InstituteRegisteredStudents';
 
 function Main() {
     // useEffect( ()=>{
@@ -36,6 +37,7 @@ function Main() {
           <Route exact path='/institutelogin' element={<InstituteLogin />}/>
           <Route exact path='/institutesignup' element={<InstituteSignUp/>}/>
           <Route exact path='/instituteprofile' element={<InstituteProfile />} />
+          <Route exact path='/registeredstudents' element={<InstituteRegisteredStudents />} />
         </Routes>
     </Router>
     </>
