@@ -670,3 +670,80 @@ a.ins:hover {
 	color: black;
 	text-shadow: 0 0 3px aqua;
 }
+
+.header {
+	display: flex;
+
+}
+
+.insLogo {
+	/* display: flex;
+	align-items: center; */
+	margin-top: 20px;
+	width: 120px;
+	height: 120px;
+	margin-left: 100px;
+	
+}
+
+.headerIns {
+	margin-top: -10px;
+	height: 180px;
+	width: 70%;
+	/* background-color: beige; */
+	text-align: center;
+}
+
+.nameIns {
+	color: #004999;
+	margin-top: -20px;
+}
+
+.affiliation {
+	font-weight: 350;
+	margin-top: -20px;
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: -20px;
+}
+
+.horRule {
+	color: rgba(9, 200, 0, 0.3);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.3);
+}
+
+.bodyInner {
+	display: flex;
+	align-items: center;
+}
+
+.insImg {
+	margin: 20px;
+	margin-top: -20px;
+	margin-left: 40px;
+	border: 1px solid red;
+	border-radius: 10px;
+	max-width: 500px;
+	max-height: 300px;
+}
+
+.innerBodyText {
+	margin-top: -20px;
+	margin-left: 20px;
+	margin-right: 40px;
+	text-align: justify;
+}
+
+.insFooter {
+	margin-top: 63px;
+	height: 50px;
+	background-color: #004999;
+}
+
+.insProfile {
+	height: 100vh;
+}
