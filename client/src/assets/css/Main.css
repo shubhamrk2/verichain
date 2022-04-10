@@ -18,14 +18,8 @@ a {
   color: black;
 }
 
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 1;
+.backgroundImg {
+  background: url("../images/front-bg.jpg");
 }
 
 .index-content {
@@ -33,7 +27,7 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   color: #f1f1f1;
   z-index: 2;
 }
@@ -132,7 +126,8 @@ input {
   width: 80%;
 }
 
-.signInButton, .signUpButton {
+.signInButton,
+.signUpButton {
   border-radius: 25px;
   border: 3px solid #192e92;
   background-color: #192e92;
@@ -153,37 +148,38 @@ button:focus {
   outline: none;
 }
 
-.signInButton:hover, .signUpButton:hover {
-	background-color: aquamarine;
-	color: black;
-	cursor: pointer;
+.signInButton:hover,
+.signUpButton:hover {
+  background-color: aquamarine;
+  color: black;
+  cursor: pointer;
 }
-.shiftSt:hover{
-	color: black;
-	background-color: aquamarine;
-	cursor: pointer;
+.shiftSt:hover {
+  color: black;
+  background-color: aquamarine;
+  cursor: pointer;
 }
 
 .shiftSt {
-		font-size: 14px;
-		background-color: #192e92;
-		border: 3px solid #192e92;
-		border-radius: 25px;
-		padding: 12px 45px;
-		margin-top: 25px;
-		text-decoration: none;
-		border: 3px solid white;
-		cursor: pointer;
+  font-size: 14px;
+  background-color: #192e92;
+  border: 3px solid #192e92;
+  border-radius: 25px;
+  padding: 12px 45px;
+  margin-top: 25px;
+  text-decoration: none;
+  border: 3px solid white;
+  cursor: pointer;
 }
 
 .inside-buttonSt {
   color: white;
-	font-size: 14px;
-	font-weight: bold;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .inside-buttonSt:hover {
-	color: black;
+  color: black;
 }
 
 .social-container {
@@ -237,29 +233,29 @@ span.signup {
 
 #signup-button {
   margin-bottom: 10px;
-		background-color: #192e92;
-		border-radius: 25px;
-		padding: 10px 40px;
-		border: 3px solid #192e92;
-		cursor: pointer;
-		font-size: 14px;
-		font-weight: bold;
-		margin-top: 10px;
-		transition: all 80ms;
-		color: white;
+  background-color: #192e92;
+  border-radius: 25px;
+  padding: 10px 40px;
+  border: 3px solid #192e92;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 80ms;
+  color: white;
 }
 
 #signup-button:hover {
-	background-color: aquamarine;
-	color: black;
+  background-color: aquamarine;
+  color: black;
 }
 
 /* Student Dashboard */
 
 .edit {
-	float: right;
-	margin-top: -55px;
-	margin-right: 25px;
+  float: right;
+  margin-top: -55px;
+  margin-right: 25px;
 }
 
 .logo {
@@ -268,7 +264,6 @@ span.signup {
   /* position: relative; */
 }
 
-
 .navbar {
   display: flex;
   background-color: red;
@@ -276,7 +271,7 @@ span.signup {
   align-items: center;
   justify-content: space-between;
   padding: 0px 50px 0px 50px;
-	box-shadow: 0 6px 9px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 6px 9px 0 rgba(0, 0, 0, 0.3);
 }
 
 ul {
@@ -515,289 +510,287 @@ td {
   margin-top: 0;
 }
 
-
 /* Institute Login */
 
 .login-institute {
-		background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648898298/Verichain/rm222batch2-mind-03_ugbnwp.jpg");
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		background-size: cover;
-		background-repeat: no-repeat;
-	}
+  background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648898298/Verichain/rm222batch2-mind-03_ugbnwp.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-	.signin-container-ins {
-		background-color: whitesmoke;
-		border-radius: 10px;
-		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-		position: relative;
-		overflow: hidden;
-		width: 700px;
-		max-width: 100%;
-		max-height: 480px;
-	}
+.signin-container-ins {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 700px;
+  max-width: 100%;
+  max-height: 480px;
+}
 
-	.formcontainer {
-		position: relative;
-		top: 0;
-		height: 100%;
-		transition: all 0.6s ease-in-out;
-	}
+.formcontainer {
+  position: relative;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
 
-	.sign-in-container-ins {
-		left: 0;
-		width: 100%;
-		z-index: 2;
-	}
+.sign-in-container-ins {
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
 
-	.insForm {
-		background-color: whitesmoke;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		padding: 0 50px;
-		height: 90%;
-		text-align: center;
-	}
+.insForm {
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 90%;
+  text-align: center;
+}
 
-	.signUpBtnIns, .insSignBtn {
-		background-color: rgb(0, 153, 255);
-		border: 3px solid rgb(0, 153, 255);
-		color: black;
-		border-radius: 25px;
-		font-size: 14px;
-		font-weight: bold;
-		padding: 10px 40px;
-		letter-spacing: 1px;
-		text-transform: uppercase;
-		transition: 80ms ease-in;
-		cursor: pointer;
-	}
+.signUpBtnIns,
+.insSignBtn {
+  background-color: rgb(0, 153, 255);
+  border: 3px solid rgb(0, 153, 255);
+  color: black;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 80ms ease-in;
+  cursor: pointer;
+}
 
-	.signUpBtnIns:hover, .insSignBtn:hover{
-		background-color: beige;
-	}
+.signUpBtnIns:hover,
+.insSignBtn:hover {
+  background-color: beige;
+}
 
-	.shiftIns {
-		color: black;
-		font-size: 14px;
-		background-color: rgb(0, 153, 255);
-		border: 3px solid rgb(0, 153, 255);
-		border-radius: 25px;
-		padding: 12px 45px;
-		margin-top: 25px;
-		text-decoration: none;
-		border: 3px solid rgb(0, 153, 255);
-	}
+.shiftIns {
+  color: black;
+  font-size: 14px;
+  background-color: rgb(0, 153, 255);
+  border: 3px solid rgb(0, 153, 255);
+  border-radius: 25px;
+  padding: 12px 45px;
+  margin-top: 25px;
+  text-decoration: none;
+  border: 3px solid rgb(0, 153, 255);
+}
 
-	.shiftIns:hover {
-		background-color: beige;
-	}
+.shiftIns:hover {
+  background-color: beige;
+}
 
-	.inside-button {
-		color: black;
-		font-size: 14px;
-		font-weight: bold;
-	}
+.inside-button {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+}
 
-	.social-container-ins {
-		margin-top: -10px;
-	}
+.social-container-ins {
+  margin-top: -10px;
+}
 
-	/* SignUp Institute */
+/* SignUp Institute */
 
-	.signup-container-ins {
-		background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648898298/Verichain/rm222batch2-mind-03_ugbnwp.jpg");
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		background-size: cover;
-		background-repeat: no-repeat;
-	}
+.signup-container-ins {
+  background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648898298/Verichain/rm222batch2-mind-03_ugbnwp.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-	.sign-up-container-ins {
-		background-color: #fff;
-		border-radius: 10px;
-		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-		position: relative;
-		overflow: hidden;
-		width: 700px;
-		max-width: 100%;
-		max-height: 480px;
-	}
-	
-	#signupcontainer {
-		left: 0;
-		width: 100%;
-		z-index: 2;
-	}
+.sign-up-container-ins {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 700px;
+  max-width: 100%;
+  max-height: 480px;
+}
 
-	span.signup {
-		margin-bottom: 0px;
-	}
+#signupcontainer {
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
 
-	#signup-buttonIns {
-		margin-bottom: 10px;
-		background-color: rgba(0, 153, 255);
-		border-radius: 25px;
-		padding: 10px 40px;
-		border: 3px solid rgba(0, 153, 255);
-		cursor: pointer;
-		font-size: 14px;
-		font-weight: bold;
-		margin-top: 10px;
-		transition: all 80ms;
-	}
+span.signup {
+  margin-bottom: 0px;
+}
 
-	#signup-buttonIns:hover {
-		background-color: beige;
-	}
+#signup-buttonIns {
+  margin-bottom: 10px;
+  background-color: rgba(0, 153, 255);
+  border-radius: 25px;
+  padding: 10px 40px;
+  border: 3px solid rgba(0, 153, 255);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 80ms;
+}
+
+#signup-buttonIns:hover {
+  background-color: beige;
+}
 
 /* Institute Dashboard */
 
 .navbarIns {
-	display: flex;
-	background-color: #004999;
-	height: 60px;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0px 150px 0px 50px;
-	box-shadow: 0 6px 9px 0 rgba(0,0,0,0.3);
+  display: flex;
+  background-color: #004999;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 150px 0px 50px;
+  box-shadow: 0 6px 9px 0 rgba(0, 0, 0, 0.3);
 }
 
 a.ins:hover {
-	background-color: white;
-	color: black;
-	text-shadow: 0 0 3px aqua;
+  background-color: white;
+  color: black;
+  text-shadow: 0 0 3px aqua;
 }
 
 .header {
-	display: flex;
-
+  display: flex;
 }
 
 .insLogo {
-	/* display: flex;
+  /* display: flex;
 	align-items: center; */
-	margin-top: 30px;
-	width: 120px;
-	height: 120px;
-	margin-left: 100px;
-	
+  margin-top: 30px;
+  width: 120px;
+  height: 120px;
+  margin-left: 100px;
 }
 
 .headerIns {
-	margin-top: -10px;
-	height: 180px;
-	width: 70%;
-	/* background-color: beige; */
-	text-align: center;
+  margin-top: -10px;
+  height: 180px;
+  width: 70%;
+  /* background-color: beige; */
+  text-align: center;
 }
 
 .nameIns {
-	color: #004999;
-	margin-top: -20px;
+  color: #004999;
+  margin-top: -20px;
 }
 
 .affiliation {
-	font-weight: 350;
-	margin-top: -20px;
+  font-weight: 350;
+  margin-top: -20px;
 }
 
 .body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -10px;
 }
 
 .horRule {
-	color: rgba(9, 200, 0, 0.3);
-	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.3);
+  color: rgba(9, 200, 0, 0.3);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
 .bodyInner {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .insImg {
-	margin: 20px;
-	margin-top: -20px;
-	margin-left: 40px;
-	border: 1px solid red;
-	border-radius: 10px;
-	max-width: 500px;
-	max-height: 300px;
+  margin: 20px;
+  margin-top: -20px;
+  margin-left: 40px;
+  border: 1px solid red;
+  border-radius: 10px;
+  max-width: 500px;
+  max-height: 300px;
 }
 
 .innerBodyText {
-	margin-top: -20px;
-	margin-left: 20px;
-	margin-right: 40px;
-	text-align: justify;
+  margin-top: -20px;
+  margin-left: 20px;
+  margin-right: 40px;
+  text-align: justify;
 }
 
 .insFooter {
-	margin-top: 43px;
-	height: 60px;
-	background-color: #004999;
+  margin-top: 43px;
+  height: 60px;
+  background-color: #004999;
 }
 
 .insProfile {
-	height: 100vh;
+  height: 100vh;
 }
 
 .insFooter {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
 }
 
 .insFooter p {
-	margin: 20px;
+  margin: 20px;
 }
 
 .excellenceText {
-	margin-top: -10px;
-	color: #004999;
-	font-weight: 500;
+  margin-top: -10px;
+  color: #004999;
+  font-weight: 500;
 }
 
 .vision {
-	color: #004999;
-	font-weight: 700;
-	font-style: italic;
+  color: #004999;
+  font-weight: 700;
+  font-style: italic;
 }
 
 /* Registered Students */
 
 .registeredBody {
-	height: 77.3vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  height: 77.3vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .registeredCard {
-	display: flex;
-	background-color: beige;
-	width: 75%;
-	height: 75%;
-	overflow: scroll;
-	justify-content: center;
-	align-items: center;
-	border-radius: 25px;
-	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3);
-	
+  display: flex;
+  background-color: beige;
+  width: 75%;
+  height: 75%;
+  overflow: scroll;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
 }
 .registeredCard::-webkit-scrollbar {
   display: none;
