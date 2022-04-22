@@ -429,7 +429,7 @@ button .dropdown {
 .studentGeneral {
   display: grid;
   grid-template-columns: 900px;
-  grid-template-rows: 50px 450px;
+  grid-template-rows: 50px auto;
   grid-template-areas: "image" "text";
   border-radius: 18px;
   background: white;
