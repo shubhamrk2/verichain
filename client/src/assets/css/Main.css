@@ -192,6 +192,7 @@ span {
 
 a.forgot {
   color: black;
+  margin-top: -40px;
 }
 
 a:on-click {
@@ -222,6 +223,7 @@ a:on-click {
 }
 
 #signupcontainer {
+  margin-top: 10px;
   left: 0;
   width: 100%;
   z-index: 2;
@@ -250,6 +252,9 @@ span.signup {
   color: black;
 }
 
+.social-container-signup {
+  margin-top: -20px;
+}
 /* Student Dashboard */
 
 .edit {
@@ -787,13 +792,18 @@ a.ins:hover {
   width: 75%;
   height: 75%;
   overflow: scroll;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   border-radius: 25px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
 }
 .registeredCard::-webkit-scrollbar {
   display: none;
+}
+
+#selectList {
+  width: 30%;
+
 }
 
 /* Student My Documents */

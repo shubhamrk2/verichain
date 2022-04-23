@@ -17,7 +17,7 @@ function SignUpStudent() {
     if(res.data.success === true)
     window.location.href = "/loginstudent"
     else{
-      setError("Something Went Wrong ! Please Try Again !");
+      setError("Please enter the required fields!");
       setTimeout(() => {
         setError("");
       }, 2000);

@@ -9,6 +9,8 @@ import {FaEdit} from "@react-icons/all-files/fa/FaEdit"
 import axios from 'axios';
 import {useState,useEffect} from 'react'
 import {BASE_URL} from '../constants'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 function StudentProfile() {
   const [userData,setUserData] = useState({
@@ -29,6 +31,7 @@ function StudentProfile() {
     country : '',
   });
 
+  const [selectedDate, setSelectedDate] = useState(null);
   // const [fathersName, setFathersName] = useState(userData.fathers_name);
   // const [mothersName, setMothersName] = useState(userData.mothers_name);
   // const [gender, setGender] = useState(userData.gender);
@@ -75,7 +78,6 @@ function StudentProfile() {
       styles.forEach(s=>s.style.display="none");
       fields.forEach(s=>s.style.display="unset");
     }
-
   }
   return (
     <div className='studentProfile'>
@@ -139,7 +141,10 @@ function StudentProfile() {
               <td className='data-block'>{userData.dob}</td>
               <div className='field-container'>
               <TextField inputProps={{ className: "input-fields", name: "dob" }} variant="standard" size="small" value={userData.dob} onChange={handleInput} />
-              
+              <DatePicker 
+              selected={selectedDate} 
+              onChange={date => setSelectedDate(date)}
+              />
               {/* <KeyboardDatePicker
                 placeholder="10/10/2022"
                 value={dob}

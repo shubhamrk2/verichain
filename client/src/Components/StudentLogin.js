@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { BASE_URL } from '../constants';
 function StudentLogin() {
-    const [email,setEmail] = useState("gaurav@gmail.com");
-    const [password,setPassword] = useState("123465");
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
     const [error,setError] = useState("");
 
     const handleSubmit = async (e) => {
@@ -20,7 +20,7 @@ function StudentLogin() {
             window.location.href="/studentprofile"
         }
         else{
-            setError("Something Went Wrong! Please Try Again!");
+            setError("Please enter the credentials!");
             console.log(error);
             setTimeout(() => {
                 setError("");

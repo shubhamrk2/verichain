@@ -9,7 +9,12 @@ function InstituteRegisteredStudents() {
       </div>
       <div className="registeredBody">
         <div className="registeredCard">
-          <p>No Students are registered.</p>
+          {/* <p>No Students are registered.</p> */}
+          <select name="selectList" id="selectList">
+              <option value="option 1">Student 1</option> {" "}
+            <option value="option 2">Student 2</option>
+          </select>
+          <button className="showDetails">Show Details</button>
         </div>
       </div>
       <footer className="insFooter">
