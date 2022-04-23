@@ -21,7 +21,6 @@ function StudentLogin() {
         }
         else{
             setError("Please enter the credentials!");
-            console.log(error);
             setTimeout(() => {
                 setError("");
             }, 2000);

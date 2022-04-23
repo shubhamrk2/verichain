@@ -1,7 +1,28 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { FaGoogle } from '@react-icons/all-files/fa/FaGoogle';
 import {Link} from "react-router-dom"
+import axios from 'axios';
+import { BASE_URL } from '../constants';
 function InstituteLogin() {
+    const [error,setError] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const form = document.querySelector('#lform');
+        const formData = new FormData(form);
+        const res = await axios.post(BASE_URL+'login',formData);
+        console.log(res)
+        if(res.data.success === true){
+            localStorage.setItem('user-token',res.data.token)
+            window.location.href="/studentprofile"
+        }
+        else{
+            setError("Please enter the credentials!");
+            setTimeout(() => {
+                setError("");
+            }, 2000);
+        }
+    }
   return (
     <div  className='login-institute'>
       <div className='signin-container-ins'>
@@ -22,7 +43,7 @@ function InstituteLogin() {
               <button type='submit' className='insSignBtn'>Sign in</button>
             </Link>
             <p>Don't have an account with us? Create one!</p>
-                <Link to='/institutesignup'><button type='submit' id="signUpBtnIns" className='signUpBtnIns'>Sign up</button></Link>
+                <Link to='/institutesignup'><button type='submit' id="signUpBtnIns" className='signUpBtnIns' onClick={handleSubmit}>Sign up</button></Link>
           </form>
         </div>
       </div>
