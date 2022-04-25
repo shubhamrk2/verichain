@@ -48,7 +48,7 @@ function StudentProfile() {
   // const [country, setCountry] = useState(userData.country);
   
   useEffect(async () => {
-    const formData =new FormData;
+    const formData = new FormData;
     formData.append('token',localStorage.getItem('user-token'))
     const res = await axios.post(BASE_URL+'get_user_data',formData);
     setUserData(res.data)
@@ -84,7 +84,8 @@ function StudentProfile() {
       <StudentNavbar/>
       <div className='studentContainer'>
       <div className='studentCard'>
-        <img src={propic} className='studentAvatar'></img>
+        <div className='studentEdit'><img src={propic} className='studentAvatar'></img>
+        <a href='#' className='editS' onClick={handleEdit}><FaEdit/></a></div>
         <div className='studentCardBody'>
           <h1>Shubham Singh</h1>
           <hr></hr>

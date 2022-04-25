@@ -7,6 +7,9 @@ function InstituteProfile() {
     <div className="insProfile">
       <div>
         <InstituteNavbar />
+        <br/>
+        <br/>
+        <br/>
       </div>
       <div className="header">
         <img src={insLogo} className="insLogo" />

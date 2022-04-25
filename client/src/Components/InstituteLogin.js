@@ -8,13 +8,13 @@ function InstituteLogin() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const form = document.querySelector('#lform');
-        const formData = new FormData(form);
+        // const form = document.querySelector('#lform');
+        const formData = new FormData(document.getElementById('insForm'));
         const res = await axios.post(BASE_URL+'login',formData);
         console.log(res)
         if(res.data.success === true){
             localStorage.setItem('user-token',res.data.token)
-            window.location.href="/studentprofile"
+            window.location.href="/instituteprofile"
         }
         else{
             setError("Please enter the credentials!");

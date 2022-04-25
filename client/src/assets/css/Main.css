@@ -272,7 +272,9 @@ span.signup {
 .navbar {
   display: flex;
   background-color: red;
+  position: fixed;
   height: 60px;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   padding: 0px 50px 0px 50px;
@@ -378,14 +380,24 @@ ul li {
 
 .studentProfile {
   background: url("../images/studentprofile.jpg");
-  height: 100vh;
+  /* height: 100%; */
+  /* margin-top: 60px; */
   overflow: hidden;
+}
+
+.studentEdit {
+  display: flex;
+}
+
+.editS {
+  margin-right: 14px;
+  margin-top: -2px;
 }
 
 .studentContainer {
   display: flex;
   position: absolute;
-  margin-top: 50px;
+  margin-top: 110px;
   margin-left: 120px;
   color: white;
   /* z-index: 2; */
@@ -666,10 +678,16 @@ span.signup {
   display: flex;
   background-color: #004999;
   height: 60px;
+  position: fixed;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   padding: 0px 150px 0px 50px;
   box-shadow: 0 6px 9px 0 rgba(0, 0, 0, 0.3);
+}
+
+ul {
+  margin-right: 70px;
 }
 
 a.ins:hover {
@@ -744,9 +762,11 @@ a.ins:hover {
 }
 
 .insFooter {
-  margin-top: 43px;
+  margin-top: 33px;
   height: 60px;
   background-color: #004999;
+  position: fixed;
+  width: 100%;
 }
 
 .insProfile {

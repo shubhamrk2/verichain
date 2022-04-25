@@ -6,6 +6,9 @@ function InstituteRegisteredStudents() {
     <>
       <div>
         <InstituteNavbar />
+        <br/>
+        <br/>
+        <br/>
       </div>
       <div className="registeredBody">
         <div className="registeredCard">

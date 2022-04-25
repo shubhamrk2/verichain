@@ -1,6 +1,7 @@
 .navbar-dropdown{
     position: relative;
     width: 20px;
+    margin-right: 100px;
 }
 .navbar-dropdown-inner{
     display: none;

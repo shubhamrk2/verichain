@@ -7,9 +7,15 @@ function StudentMyDocuments() {
       <div>
         <StudentNavbar />
       </div>
+      <br/>
+      <br/>
       <div className="myDocBody">
         <div className="myDocCard">
-          No Documents have been uploaded.
+          <select>
+            <option>Educational</option>
+            <option>Government IDs</option>
+            <option>Miscellaneous</option>
+          </select>
         </div>
       </div>
     </>
