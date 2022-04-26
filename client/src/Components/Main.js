@@ -17,6 +17,7 @@ import StudentProfile from './StudentProfile';
 import InstituteSignUp from "./InstituteSignUp";
 import InstituteProfile from "./InstituteProfile"
 import InstituteRegisteredStudents from './InstituteRegisteredStudents';
+import StudentDetails from './StudentDetails';
 
 function Main() {
     // useEffect( ()=>{
@@ -32,6 +33,7 @@ function Main() {
           <Route exact path='/studentupload' element={<StudentUpload />}/>
           <Route exact path='/mydocuments' element={<StudentMyDocuments />} />
           <Route exact path='/studentprofile' element={<StudentProfile />} />
+          <Route exact path='/studentdetails' element={<StudentDetails />} />
         </Routes >
         <Routes>
           <Route exact path='/institutelogin' element={<InstituteLogin />}/>
