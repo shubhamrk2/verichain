@@ -1,10 +1,27 @@
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import InstituteNavbar from "./InstituteNavbar";
 import insLogo from "../assets/images/insLogo.png";
 import insImg from "../assets/images/welcomeimg.jpg";
+import { center } from "../constants";
 function InstituteProfile() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    if(localStorage.getItem('user-token'))
+      setLoading(false);
+    else{
+      setTimeout(()=>{
+        window.location.href="/institutelogin"
+      },2000);
+    }
+  }, []);
+  
   return (
-    <div className="insProfile">
+    <>
+    {
+      loading && (<div style={center}>Please Login to see Instiute Profile !</div>)
+    }
+    {!loading &&
+(<div className="insProfile">
       <div>
         <InstituteNavbar />
         <br/>
@@ -60,7 +77,8 @@ function InstituteProfile() {
         <p>Email: principal@jssaten.ac.in</p>
         <p>Phone: 0120-2400104/2400115</p>
       </footer>
-    </div>
+    </div>)}
+    </>
   );
 }
 

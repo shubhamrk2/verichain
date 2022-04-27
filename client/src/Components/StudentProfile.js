@@ -1,8 +1,7 @@
 import React from 'react'
 import StudentNavbar from './StudentNavbar'
 import propic from "../assets/images/institute-front.jpg";
-import { Select, TextField, MenuItem } from '@mui/material';
-import { KeyboardDatePicker  } from '@material-ui/pickers'
+import { TextField } from '@mui/material';
 import '../assets/js/studentProfile.js'
 import '../assets/css/studentProfile.css'
 import {FaEdit} from "@react-icons/all-files/fa/FaEdit"
@@ -11,17 +10,17 @@ import {useState,useEffect} from 'react'
 import {BASE_URL} from '../constants'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-
+import moment from 'moment';
 function StudentProfile() {
   const [userData,setUserData] = useState({
     fathers_name : '',
     mothers_name : '',
     gender : '',
     email: '',
-    dob : '',
+    dob : null,
     mobile : '',
-    addmission_session : '',
-    insititute_name : '',
+    admission_session : '',
+    institute_name : '',
     institute_code : '',
     course_name : '',
     address : '',
@@ -29,6 +28,9 @@ function StudentProfile() {
     pincode : '',
     state : '',
     country : '',
+    roll_no:'',
+    semester:'',
+    branch:'',
   });
 
   const [selectedDate, setSelectedDate] = useState(null);
@@ -47,16 +49,21 @@ function StudentProfile() {
   // const [state, setState] = useState(userData.state);
   // const [country, setCountry] = useState(userData.country);
   
-  useEffect(async () => {
-    const formData = new FormData;
-    formData.append('token',localStorage.getItem('user-token'))
-    const res = await axios.post(BASE_URL+'get_user_data',formData);
-    setUserData(res.data)
+  useEffect( () => {
+    async function fetchData(){
+      const formData = new FormData;
+      formData.append('token',localStorage.getItem('user-token'))
+      const res = await axios.post(BASE_URL+'get_user_data',formData);
+      // console.log('date is '+ moment(res.data.dob))
+      console.log(res)
+      setUserData(res.data)
+    }
+    fetchData()
   }, []);
 
   const handleInput = e =>{
     setUserData({...userData, [e.target.name] : e.target.value})
-    console.log(userData)
+    // console.log(userData)
   }
   const handleEdit = async () => {
     const styles = document.querySelectorAll('.data-block');
@@ -72,7 +79,9 @@ function StudentProfile() {
           formData.append(i.getAttribute('name'),i.getAttribute('value'));
         }
       )
+      // console.log(inputs)
       const res = await axios.post(BASE_URL+'update_user_data',formData);
+      // console.log(res)
     }
     else{
       styles.forEach(s=>s.style.display="none");
@@ -85,14 +94,19 @@ function StudentProfile() {
       <div className='studentContainer'>
       <div className='studentCard'>
         <div className='studentEdit'><img src={propic} className='studentAvatar'></img>
-        <a href='#' className='editS' onClick={handleEdit}><FaEdit/></a></div>
+        {/* <a href='#' className='editS' onClick={handleLeftEdit}><FaEdit/></a> */}
+        </div>
         <div className='studentCardBody'>
           <h1>Shubham Singh</h1>
           <hr></hr>
           <div className='cardLowerBody'>
-            <h3>Roll No :   1809131152</h3>
-            <h3>Semester :   8</h3>
-            <h3>Branch :    Electronics and Communication Engineering</h3>
+            <h3>Roll No :  <span className='data-block'>{userData.roll_no}</span>  <div className='field-container'><TextField inputProps={{ className: "input-fields", name: "roll_no" }} variant="standard" size="small" value={userData.roll_no} onChange={handleInput} />
+            </div>
+            </h3>
+            <h3>Semester : <span className='data-block'>{userData.semester}</span>   <div className='field-container'><TextField inputProps={{ className: "input-fields", name: "semester" }} style = {{width: 100}} variant="standard" size="small" value={userData.semester} onChange={handleInput} /></div>
+            </h3>
+            <h3>Branch :    <span className='data-block'>{userData.branch}</span> <div className='field-container'><TextField inputProps={{ className: "input-fields", name: "branch" }} variant="standard" size="small" value={userData.branch} onChange={handleInput} /></div>
+            </h3>
           </div>
         </div>
       </div>
@@ -141,10 +155,12 @@ function StudentProfile() {
               </th>
               <td className='data-block'>{userData.dob}</td>
               <div className='field-container'>
-              <TextField inputProps={{ className: "input-fields", name: "dob" }} variant="standard" size="small" value={userData.dob} onChange={handleInput} />
+              {/* <TextField inputProps={{ className: "input-fields", name: "dob" }} variant="standard" size="small" value={userData.dob} onChange={handleInput} /> */}
               <DatePicker 
-              selected={selectedDate} 
+              // selected={userData.dob ? moment(userData.dob) : null}
               onChange={date => setSelectedDate(date)}
+              className='input-fields'
+              name='dob'
               />
               {/* <KeyboardDatePicker
                 placeholder="10/10/2022"
@@ -168,10 +184,10 @@ function StudentProfile() {
               <th>
                 Admission Session
               </th>
-              <td className='data-block'>{userData.addmission_session}</td>
+              <td className='data-block'>{userData.admission_session}</td>
               <div className='field-container'>
 
-              <TextField inputProps={{ className: "input-fields", name: "admission_session" }} variant="standard" size="small" value={userData.addmission_session} onChange={handleInput} />
+              <TextField inputProps={{ className: "input-fields", name: "admission_session" }} variant="standard" size="small" value={userData.admission_session} onChange={handleInput} />
               </div>
               </tr>
               <tr>
@@ -188,10 +204,10 @@ function StudentProfile() {
               <th>
                 Institute Name
               </th>
-              <td className='data-block'>{userData.insititute_name}</td>
+              <td className='data-block'>{userData.institute_name}</td>
               <div className='field-container'>
 
-              <TextField inputProps={{ className: "input-fields", name: "institute_name" }} variant="standard" size="small" value={userData.insititute_name} onChange={handleInput} />
+              <TextField inputProps={{ className: "input-fields", name: "institute_name" }} variant="standard" size="small" value={userData.institute_name} onChange={handleInput} />
               </div>
               </tr>
               <tr>
@@ -241,7 +257,7 @@ function StudentProfile() {
               <td className='data-block'>{userData.pincode}</td>
               <div className='field-container'>
 
-              <TextField inputProps={{ className: "input-fields", name:"pincode" }} variant="standard" size="small"  vvalue={userData.pincode} onChange={handleInput} />
+              <TextField inputProps={{ className: "input-fields", name:"pincode" }} variant="standard" size="small"  value={userData.pincode} onChange={handleInput} />
               </div>
               </tr>
               <tr>
