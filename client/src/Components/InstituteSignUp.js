@@ -11,7 +11,6 @@ function InstituteSignUp() {
     const form = document.querySelector('#form');
     const formData = new FormData(form);
     formData.append('type','institute');
-
     const res = await axios.post(BASE_URL+'register',formData);
     
     if(res.data.success === true)
