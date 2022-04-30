@@ -31,23 +31,9 @@ function StudentProfile() {
     roll_no:'',
     semester:'',
     branch:'',
+    profile_image:null,
+    name:'',
   });
-
-  const [selectedDate, setSelectedDate] = useState(null);
-  // const [fathersName, setFathersName] = useState(userData.fathers_name);
-  // const [mothersName, setMothersName] = useState(userData.mothers_name);
-  // const [gender, setGender] = useState(userData.gender);
-  // const [dob, setDob] = useState(userData.dob);
-  // const [mobile, setMobile] = useState(userData.mobile);
-  // const [admissionSession, setAdmissionSession] = useState(userData.admission_session);
-  // const [instituteCode, setInstituteCode] = useState(userData.institute_code);
-  // const [instituteName, setInstituteName] = useState(userData.insititute_name);
-  // const [courseName, setCourseName] = useState(userData.course_name);
-  // const [address, setAddress] = useState(userData.address);
-  // const [district, setDistrict] = useState(userData.district);
-  // const [pincode, setPincode] = useState(userData.pincode);
-  // const [state, setState] = useState(userData.state);
-  // const [country, setCountry] = useState(userData.country);
   
   useEffect( () => {
     async function fetchData(){
@@ -88,16 +74,38 @@ function StudentProfile() {
       fields.forEach(s=>s.style.display="unset");
     }
   }
+  const upload = document.querySelector('#profile_image');
+  const handleImageChange = (e) => {
+    const formData = new FormData();
+    const file = e.target.files[0]
+    if(!file.name.match(/\.(jpg|jpeg|png|gif)$/)){
+      alert("Only jpg, png and gif are allowed.")
+      return
+    }
+    formData.append('image',file)
+    formData.append('image_name',file.name)
+    formData.append('token',localStorage.getItem('user-token'))
+    axios.post(BASE_URL+'upload_profile_image',formData).then((res)=>{
+      setUserData({...userData, profile_image : res.data.url})
+      upload.value=null
+      console.log(res.data)
+    }).catch((error)=>{
+      console.log(error)
+    });
+  }
+
   return (
     <div className='studentProfile'>
       <StudentNavbar/>
       <div className='studentContainer'>
       <div className='studentCard'>
-        <div className='studentEdit'><img src={propic} className='studentAvatar'></img>
+        <div className='profileImage'>
+          <img onClick={()=>{upload.click()}} src={userData.profile_image?userData.profile_image:propic} className='studentAvatar' />
         {/* <a href='#' className='editS' onClick={handleLeftEdit}><FaEdit/></a> */}
+          <input type='file' id='profile_image' onChange={handleImageChange} style={{'display':'none'}}></input>
         </div>
         <div className='studentCardBody'>
-          <h1>Shubham Singh</h1>
+          <h1>{userData.name}</h1>
           <hr></hr>
           <div className='cardLowerBody'>
             <h3>Roll No :  <span className='data-block'>{userData.roll_no}</span>  <div className='field-container'><TextField inputProps={{ className: "input-fields", name: "roll_no" }} variant="standard" size="small" value={userData.roll_no} onChange={handleInput} />
@@ -157,8 +165,8 @@ function StudentProfile() {
               <div className='field-container'>
               {/* <TextField inputProps={{ className: "input-fields", name: "dob" }} variant="standard" size="small" value={userData.dob} onChange={handleInput} /> */}
               <DatePicker 
-              // selected={userData.dob ? moment(userData.dob) : null}
-              onChange={date => setSelectedDate(date)}
+              selected={userData.dob ? moment(userData.dob) : null}
+              onChange={date => setUserData({...userData,dob:date})}
               className='input-fields'
               name='dob'
               />
