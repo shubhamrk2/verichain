@@ -87,8 +87,9 @@ function StudentProfile() {
     formData.append('token',localStorage.getItem('user-token'))
     axios.post(BASE_URL+'upload_profile_image',formData).then((res)=>{
       setUserData({...userData, profile_image : res.data.url})
-      upload.value=null
-      console.log(res.data)
+      upload.value=''
+      // console.log(file.name)
+      // console.log(res.data)
     }).catch((error)=>{
       console.log(error)
     });
@@ -100,7 +101,7 @@ function StudentProfile() {
       <div className='studentContainer'>
       <div className='studentCard'>
         <div className='profileImage'>
-          <img onClick={()=>{upload.click()}} src={userData.profile_image?userData.profile_image:propic} className='studentAvatar' />
+          <img onClick={()=>{upload.click()}} src={userData.profile_image ? userData.profile_image : propic} className='studentAvatar' />
         {/* <a href='#' className='editS' onClick={handleLeftEdit}><FaEdit/></a> */}
           <input type='file' id='profile_image' onChange={handleImageChange} style={{'display':'none'}}></input>
         </div>

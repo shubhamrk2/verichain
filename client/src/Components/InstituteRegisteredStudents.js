@@ -4,13 +4,13 @@ import InstituteNavbar from "./InstituteNavbar";
 import axios from "axios";
 import { center } from "../constants";
 function InstituteRegisteredStudents() {
-  const [students, setStudents] = useState(null);
+  const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect( () => {
     async function fetchStudents(){
-      await axios.get(BASE_URL+'fetch_students').then((data)=>{
+      const token = localStorage.getItem('user-token');
+      await axios.get(BASE_URL+'fetch_students?token='+token).then((data)=>{
         setStudents(data.data)
-        console.log(data.data)
         setLoading(false)
       }).catch(e=>{
         console.log(e)
@@ -31,8 +31,8 @@ function InstituteRegisteredStudents() {
         <br/>
       </div>
       <div className="registeredBody">
-        {!students && <>No Registered Students Found.</>}
-        {students && 
+        {students.length === 0 && <>No Registered Students Found.</>}
+        {students.length > 0 && (
         <div className="registeredCard">
           {/* <p>No Students are registered.</p> */}
           <select name="selectList" id="selectList">
@@ -41,7 +41,7 @@ function InstituteRegisteredStudents() {
             })}
           </select>
           <button className="showDetails">Show Details</button>
-        </div>
+        </div>)
         }
       </div>
       <footer className="insFooter">
