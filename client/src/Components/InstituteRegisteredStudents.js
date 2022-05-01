@@ -31,6 +31,8 @@ function InstituteRegisteredStudents() {
         <br/>
       </div>
       <div className="registeredBody">
+        {!students && <>No Registered Students Found.</>}
+        {students && 
         <div className="registeredCard">
           {/* <p>No Students are registered.</p> */}
           <select name="selectList" id="selectList">
@@ -40,6 +42,7 @@ function InstituteRegisteredStudents() {
           </select>
           <button className="showDetails">Show Details</button>
         </div>
+        }
       </div>
       <footer className="insFooter">
         <p>
