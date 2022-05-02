@@ -6,6 +6,7 @@ import { center } from "../constants";
 function InstituteRegisteredStudents() {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [documents,setDocuments] = useState([])
   useEffect( () => {
     async function fetchStudents(){
       const token = localStorage.getItem('user-token');
@@ -19,6 +20,12 @@ function InstituteRegisteredStudents() {
     fetchStudents()
     
   }, []);
+  const loadDocuments = async () => {
+    const user_id = document.querySelector('#selectList').getAttribute("value");
+    await axios.get(BASE_URL+'get_documents/'+user_id).then(res => {
+      setDocuments(res.data)
+    }).catch(e => console.log(e))
+  }
   return (
     <>
     {loading && <div style={center}>Please Wait, fetching data !</div>}
@@ -40,8 +47,10 @@ function InstituteRegisteredStudents() {
               return (<option value={student.id} key={student.id}>{student.name}</option>)
             })}
           </select>
-          <button className="showDetails">Show Details</button>
-        </div>)
+          <button onClick={loadDocuments} className="showDetails">Show Details</button>
+          {documents && documents.map(doc=>{return <div>{doc.type}  {doc.ipfsHash}</div>})}
+        </div>
+        )
         }
       </div>
       <footer className="insFooter">

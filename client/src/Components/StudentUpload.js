@@ -3,6 +3,8 @@ import hashContract from "../contracts/Contract.json";
 import getWeb3 from "../utils/getWeb3";
 import ipfs from "../ipfs";
 import StudentNavbar from "./StudentNavbar";
+import axios from "axios";
+import { BASE_URL } from "../constants";
 // import "../App.css";
 
 class StudentUpload extends Component {
@@ -97,7 +99,14 @@ class StudentUpload extends Component {
         });
 
       // localStorage.setItem("hash", result[0].hash );
-      console.log("ipfsHash", this.state.ipfsHash);
+      // console.log("ipfsHash", this.state.ipfsHash);
+      const formData =new FormData;
+      formData.append('token',localStorage.getItem('user-token'))
+      formData.append('hash',this.state.ipfsHash)
+      formData.append('type',document.querySelector('#selectList').getAttribute("value"))
+      axios.post(BASE_URL+'store_document',formData).then((res)=>{
+        console.log(res)
+      }).catch(e=>{console.log(e)})
     });
   }
   render() {
