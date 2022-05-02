@@ -21,7 +21,7 @@ function InstituteRegisteredStudents() {
   }, []);
   const loadDocuments = async () => {
     const user_id = document.querySelector('#selectList').getAttribute("value");
-    await axios.get(BASE_URL+'get_documents/'+user_id).then(res => {
+    await axios.get(BASE_URL+'get_documents/'+user_id+'?token='+localStorage.getItem('user-token')).then(res => {
       setDocuments(res.data)
     }).catch(e => console.log(e))
   }
