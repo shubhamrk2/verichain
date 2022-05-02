@@ -78,8 +78,9 @@ function InstituteRegisteredStudents() {
             )}
             <div className="registeredCard">
             <table className="docTable">
-              <tr>
+              <tbody>
                 <th>Sr. No</th>
+                <th>Document Type</th>
                 <th>Document Name</th>
                 <th>
                   {/* <a href={`https://ipfs.io/ipfs/${doc.hash}`}>View</a> */}
@@ -88,7 +89,7 @@ function InstituteRegisteredStudents() {
                 <th>
                   <a href="#">Verify</a>
                 </th>
-              </tr>
+              </tbody>
             </table>
             </div>
           </div>
