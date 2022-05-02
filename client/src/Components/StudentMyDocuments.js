@@ -23,6 +23,12 @@ function StudentMyDocuments() {
             <th><a href="#">View</a></th>
             <th><a href="#">Delete</a></th>
           </tr>
+          <tr>
+            <th>Sr. No</th>
+            <th>Document Name</th>
+            <th><a href="https://ipfs.io/ipfs/QmPQj9sAsWsJ11EhWvaMKS3xP2VQEy2Lu4uWzsudK1KktW" target="_blank">View</a></th>
+            <th><a href="#">Delete</a></th>
+          </tr>
         </table>
         </div>
       </div>
