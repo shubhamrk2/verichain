@@ -20,7 +20,7 @@ function InstituteRegisteredStudents() {
     fetchStudents();
   }, []);
   const loadDocuments = async () => {
-    const user_id = document.querySelector('#selectList').getAttribute("value");
+    const user_id = document.querySelector('#selectList').value;
     await axios.get(BASE_URL+'get_documents/'+user_id+'?token='+localStorage.getItem('user-token')).then(res => {
       setDocuments(res.data)
     }).catch(e => console.log(e))
@@ -47,7 +47,7 @@ function InstituteRegisteredStudents() {
             })}
           </select>
           <button onClick={loadDocuments} className="showDetails">Show Details</button>
-          {documents && documents.map(doc=>{return <div>{doc.type}  {doc.ipfsHash}</div>})}
+          {documents && documents.map(doc=>{return <div>{doc.type}  {doc.hash}</div>})}
         </div>
         )
         }

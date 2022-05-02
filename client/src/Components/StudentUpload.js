@@ -103,7 +103,7 @@ class StudentUpload extends Component {
       const formData =new FormData;
       formData.append('token',localStorage.getItem('user-token'))
       formData.append('hash',this.state.ipfsHash)
-      formData.append('type',document.querySelector('#selectList').getAttribute("value"))
+      formData.append('type',document.querySelector('#selectList').value)
       axios.post(BASE_URL+'store_document',formData).then((res)=>{
         console.log(res)
       }).catch(e=>{console.log(e)})
