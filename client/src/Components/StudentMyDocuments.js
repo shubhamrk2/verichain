@@ -11,11 +11,19 @@ function StudentMyDocuments() {
       <br/>
       <div className="myDocBody">
         <div className="myDocCard">
-          <select>
+          {/* <select>
             <option>Educational</option>
             <option>Government IDs</option>
             <option>Miscellaneous</option>
-          </select>
+          </select> */}
+          <table className="docTable">
+          <tr>
+            <th>Sr. No</th>
+            <th>Document Name</th>
+            <th><a href="#">View</a></th>
+            <th><a href="#">Delete</a></th>
+          </tr>
+        </table>
         </div>
       </div>
     </>

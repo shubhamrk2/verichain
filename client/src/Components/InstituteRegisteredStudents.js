@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../constants";
 import InstituteNavbar from "./InstituteNavbar";
 import axios from "axios";
@@ -17,8 +17,7 @@ function InstituteRegisteredStudents() {
         console.log(e)
       })
     }
-    fetchStudents()
-    
+    fetchStudents();
   }, []);
   const loadDocuments = async () => {
     const user_id = document.querySelector('#selectList').getAttribute("value");
@@ -28,7 +27,7 @@ function InstituteRegisteredStudents() {
   }
   return (
     <>
-    {loading && <div style={center}>Please Wait, fetching data !</div>}
+      {loading && <div style={center}>Please Wait, fetching data !</div>}
       {!loading && (
       <>
       <div>
