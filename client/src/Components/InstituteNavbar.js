@@ -18,7 +18,7 @@ function InstituteNavbar() {
     }
   }
   return (
-    <div className="navbar">
+    <div className="navbarIns">
       <img
         src="https://res.cloudinary.com/therealdaaku/image/upload/v1646831444/Verichain/VeriChain-logo-transparent-black_jbkiue.png"
         className="logo"

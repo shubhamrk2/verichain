@@ -823,7 +823,6 @@ a.ins:hover {
 
 #selectList {
   width: 30%;
-
 }
 
 /* Student My Documents */
@@ -861,4 +860,12 @@ a.ins:hover {
   justify-content: center;
 }
 
+.docTable {
+  border: 2px solid black;
+  width: 800px;
+  height: fit-content;
+}
 
+/* th {
+  border-bottom: 1px solid black;
+} */

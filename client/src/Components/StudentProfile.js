@@ -150,7 +150,11 @@ function StudentProfile() {
               </th>
               <td className='data-block'>{userData.gender}</td>
               <div className='field-container'>
-              <TextField inputProps={{ className: "input-fields", name: "gender" }} variant="standard" size="small" value={userData.gender} onChange={handleInput} />
+              {/* <TextField inputProps={{ className: "input-fields", name: "gender" }} variant="standard" size="small" value={userData.gender} onChange={handleInput} /> */}
+              <select>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
               
               {/* <Select inputProps={{ className: "input-fields", name: "gender" }} variant="standard" size="small" value={gender} onChange={(e) => setGender(e.target.value)} >
                 <MenuItem value={"m"}>Male</MenuItem>
@@ -216,7 +220,13 @@ function StudentProfile() {
               <td className='data-block'>{userData.institute_name}</td>
               <div className='field-container'>
 
-              <TextField inputProps={{ className: "input-fields", name: "institute_name" }} variant="standard" size="small" value={userData.institute_name} onChange={handleInput} />
+              {/* <TextField inputProps={{ className: "input-fields", name: "institute_name" }} variant="standard" size="small" value={userData.institute_name} onChange={handleInput} /> */}
+              <select>
+                  <option>JSS Academy of Technical Education, Noida (091)</option>
+                  <option>ABES Engineering College, Ghaziabad (032)</option>
+                  <option>Ajay Kumar Garg Engineering College, Ghaziabad (027)</option>
+                  <option>Institute of Engineering & Technology, Lucknow (052)</option>
+                </select>
               </div>
               </tr>
               <tr>
@@ -226,7 +236,16 @@ function StudentProfile() {
               <td className='data-block'>{userData.course_name}</td>
               <div className='field-container'>
 
-              <TextField inputProps={{ className: "input-fields", name: "course_name" }} variant="standard" size="small" value={userData.course_name} onChange={handleInput} />
+              {/* <TextField inputProps={{ className: "input-fields", name: "course_name" }} variant="standard" size="small" value={userData.course_name} onChange={handleInput} /> */}
+
+              <select>
+                  <option>Computer Science Engineering (CSE)</option>
+                  <option>Electronics & Communication Engineering (ECE)</option>
+                  <option>Information Technology (IT)</option>
+                  <option>Electricals & Electronics Engineering (EEE)</option>
+                  <option>Mechanical Engineering (ME)</option>
+                  <option>Civil Engineering (CE)</option>
+                </select>
               </div>
               </tr>
               <tr>
@@ -276,7 +295,45 @@ function StudentProfile() {
               <td className='data-block'>{userData.state}</td>
               <div className='field-container'>
 
-              <TextField inputProps={{ className: "input-fields", name:"state" }} variant="standard" size="small" value={userData.state} onChange={handleInput} />
+              {/* <TextField inputProps={{ className: "input-fields", name:"state" }} variant="standard" size="small" value={userData.state} onChange={handleInput} /> */}
+              <select>
+                  <option>Andaman and Nicobar Islands</option>
+                  <option>Andhra Pradesh</option>
+                  <option>Arunachal Pradesh</option>
+                  <option>Assam</option>
+                  <option>Bihar</option>
+                  <option>Chandigarh</option>
+                  <option>Chhattisgarh</option>
+                  <option>Dadra & Nagar Haveli and Daman & Diu</option>
+                  <option>Delhi NCR</option>
+                  <option>Goa</option>
+                  <option>Gujarat</option>
+                  <option>Harayana</option>
+                  <option>Himachal Pradesh</option>
+                  <option>Jammu and Kashmir</option>
+                  <option>Jharkhand</option>
+                  <option>Karnataka</option>
+                  <option>Kerala</option>
+                  <option>Ladakh</option>
+                  <option>Lakshadweep</option>
+                  <option>Madhya Pradesh</option>
+                  <option>Maharashtra</option>
+                  <option>Manipur</option>
+                  <option>Meghalaya</option>
+                  <option>Mizoram</option>
+                  <option>Nagaland</option>
+                  <option>Odisha</option>
+                  <option>Puducherry</option>
+                  <option>Punjab</option>
+                  <option>Rajasthan</option>
+                  <option>Sikkim</option>
+                  <option>Tamil Nadu</option>
+                  <option>Telangana</option>
+                  <option>Tripura</option>
+                  <option>Uttar Pradesh</option>
+                  <option>Uttarakhand</option>
+                  <option>West Bengal</option>
+                </select>
               </div>
               </tr>
               <tr>
