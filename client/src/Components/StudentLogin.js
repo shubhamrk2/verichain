@@ -14,10 +14,14 @@ function StudentLogin() {
         const form = document.querySelector('#lform');
         const formData = new FormData(form);
         const res = await axios.post(BASE_URL+'login',formData);
-        console.log(res)
         if(res.data.success === true){
+            
             localStorage.setItem('user-token',res.data.token)
+            const user = await axios.get(BASE_URL+'get_user?token='+res.data.token)
+            localStorage.setItem('user-id',user.data.user.id)
+
             window.location.href="/studentprofile"
+            // console.log(res.data)
         }
         else{
             setError("Please enter the credentials!");

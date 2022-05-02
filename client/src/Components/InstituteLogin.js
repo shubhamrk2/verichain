@@ -14,6 +14,7 @@ function InstituteLogin() {
 
         if(res.data.success === true){
             localStorage.setItem('user-token',res.data.token)
+            localStorage.setItem('user-id',res.data.id)
             window.location.href="/instituteprofile"
         }
         else{
