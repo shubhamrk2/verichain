@@ -48,7 +48,7 @@ function InstituteRegisteredStudents() {
             })}
           </select>
           <button onClick={loadDocuments} className="showDetails">Show Details</button>
-          {documents && documents.map(doc=>{return <div>{doc.type}  {doc.ipfsHash}</div>})}
+          {documents && documents.map(doc=>{return <div>{doc.type}  {doc.hash}</div>})}
         </div>
         )
         }
