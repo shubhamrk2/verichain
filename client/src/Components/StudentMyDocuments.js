@@ -3,6 +3,7 @@ import StudentNavbar from "./StudentNavbar";
 import axios from "axios";
 import { BASE_URL } from "../constants";
 function StudentMyDocuments() {
+  let no = 1;
   const [documents,setDocuments] = useState([])
   const loadDocuments = async () => {
     const user_id = localStorage.getItem('user-id');
@@ -40,24 +41,20 @@ function StudentMyDocuments() {
           <table className="docTable">
           <tr>
             <th>Sr. No</th>
+            <th>Document Name</th>
             <th>Document Type</th>
             <th><a href="#">View</a></th>
             <th><a href="#">Delete</a></th>
           </tr>
-          {documents.map((i,doc)=>{
+          {documents.map((doc)=>{
             return <tr>
-                    <th>{i+1}</th>
+                    <th>{no++}</th>
+                    <th>{doc.name}</th>
                     <th>{doc.type}</th>
-                    <th><a href="${doc.hash}">View</a></th>
+                    <th><a href={"https://ipfs.io/ipfs/"+doc.hash}>View</a></th>
                     <th><a href="#">Delete</a></th>
                   </tr>
           })}
-          <tr>
-            <th>Sr. No</th>
-            <th>Document Name</th>
-            <th><a href="https://ipfs.io/ipfs/QmPQj9sAsWsJ11EhWvaMKS3xP2VQEy2Lu4uWzsudK1KktW" target="_blank">View</a></th>
-            <th><a href="#">Delete</a></th>
-          </tr>
         </table>
         </div>
       </div>
