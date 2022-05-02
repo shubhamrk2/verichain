@@ -12,6 +12,7 @@ class StudentUpload extends Component {
     super(props);
     this.state = {
       ipfsHash: "",
+      fileName:"",
       web3: null,
       accounts: null,
       contract: null,
@@ -75,7 +76,7 @@ class StudentUpload extends Component {
     const file = event.target.files[0];
     const reader = new window.FileReader();
     reader.readAsArrayBuffer(file);
-    console.log(file)
+    this.setState({fileName:file.name})
     reader.onloadend = () => {
       this.setState({ buffer: Buffer(reader.result) });
       // console.log('buffer', this.state.buffer);
@@ -104,6 +105,7 @@ class StudentUpload extends Component {
       const formData =new FormData;
       formData.append('token',localStorage.getItem('user-token'))
       formData.append('hash',this.state.ipfsHash)
+      formData.append('name',this.state.fileName)
       formData.append('type',document.querySelector('#selectList').value)
       axios.post(BASE_URL+'store_document',formData).then((res)=>{
         console.log(res)
