@@ -20,9 +20,10 @@ function InstituteRegisteredStudents() {
     fetchStudents();
   }, []);
   const loadDocuments = async () => {
-    const user_id = document.querySelector('#selectList').getAttribute("value");
+    const user_id = document.querySelector('#selectList').value;
     await axios.get(BASE_URL+'get_documents/'+user_id+'?token='+localStorage.getItem('user-token')).then(res => {
       setDocuments(res.data)
+      console.log(res.data[0].hash)
     }).catch(e => console.log(e))
   }
   return (
