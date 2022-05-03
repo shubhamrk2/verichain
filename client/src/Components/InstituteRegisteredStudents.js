@@ -34,10 +34,24 @@ function InstituteRegisteredStudents() {
       )
       .then((res) => {
         setDocuments(res.data);
-        console.log(res.data[0].hash);
+        // console.log(res.data[0].hash);
       })
       .catch((e) => console.log(e));
   };
+  const handleVerify = doc_id =>{
+    await axios
+      .get(
+        BASE_URL +
+          "delete_document/" +
+          doc_id +
+          "?token=" +
+          localStorage.getItem("user-token")
+      )
+      .then((res) => {
+        // console.log(res.data[0].hash);
+      })
+      .catch((e) => console.log(e));
+  }
   return (
     <>
       {loading && <div style={center}>Please Wait, fetching data !</div>}
@@ -70,7 +84,26 @@ function InstituteRegisteredStudents() {
                   documents.map((doc) => {
                     return (
                       <div>
-                        {doc.type} {doc.hash}
+                        <table className="docTable">
+                          <tr>
+                            <th>Sr. No</th>
+                            <th>Document Name</th>
+                            <th>Document Type</th>
+                            <th>Document Status</th>
+                            <th><a href="#">View</a></th>
+                            <th><a href="#">Delete</a></th>
+                          </tr>
+                          {documents.map((doc)=>{
+                            return <tr>
+                                    <th>{no++}</th>
+                                    <th>{doc.name}</th>
+                                    <th>{doc.type}</th>
+                                    <th>{doc.is_verified?"Verified":"Not Verified"}</th>
+                                    <th><a href={"https://ipfs.io/ipfs/"+doc.hash} target="_blank">View</a></th>
+                                    <th><a href="#" onClick={() => handleVerify(doc.id)}>Verify</a></th>
+                                  </tr>
+                          })}
+                        </table>
                       </div>
                     );
                   })}
