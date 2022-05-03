@@ -43,7 +43,7 @@ function InstituteRegisteredStudents() {
     await axios
       .get(
         BASE_URL +
-          "delete_document/" +
+          "verify_document/" +
           doc_id +
           "?token=" +
           localStorage.getItem("user-token")
@@ -110,22 +110,7 @@ function InstituteRegisteredStudents() {
                   })}
               </div>
             )}
-            <div className="registeredCard">
-            <table className="docTable">
-              <tbody>
-                <th>Sr. No</th>
-                <th>Document Type</th>
-                <th>Document Name</th>
-                <th>
-                  {/* <a href={`https://ipfs.io/ipfs/${doc.hash}`}>View</a> */}
-                  <a href="https://ipfs.io/ipfs/QmPQj9sAsWsJ11EhWvaMKS3xP2VQEy2Lu4uWzsudK1KktW">View</a>
-                </th>
-                <th>
-                  <a href="#">Verify</a>
-                </th>
-              </tbody>
-            </table>
-            </div>
+            
           </div>
           <footer className="insFooter">
             <p>
