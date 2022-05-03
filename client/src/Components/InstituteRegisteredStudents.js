@@ -4,6 +4,7 @@ import InstituteNavbar from "./InstituteNavbar";
 import axios from "axios";
 import { center } from "../constants";
 function InstituteRegisteredStudents() {
+  let no = 1;
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [documents, setDocuments] = useState([]);
@@ -38,7 +39,7 @@ function InstituteRegisteredStudents() {
       })
       .catch((e) => console.log(e));
   };
-  const handleVerify = doc_id =>{
+  const handleVerify = async doc_id =>{
     await axios
       .get(
         BASE_URL +

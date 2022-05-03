@@ -25,7 +25,7 @@ function StudentMyDocuments() {
     loadDocuments()
   }, []);
 
-  const handleDelete = doc_id =>{
+  const handleDelete = async doc_id =>{
     await axios
       .get(
         BASE_URL +
