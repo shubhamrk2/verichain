@@ -42,7 +42,7 @@ function InstituteRegisteredStudents() {
     await axios
       .get(
         BASE_URL +
-          "delete_document/" +
+          "verify_document/" +
           doc_id +
           "?token=" +
           localStorage.getItem("user-token")
