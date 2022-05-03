@@ -24,6 +24,21 @@ function StudentMyDocuments() {
   useEffect(() => {
     loadDocuments()
   }, []);
+
+  const handleDelete = doc_id =>{
+    await axios
+      .get(
+        BASE_URL +
+          "delete_document/" +
+          doc_id +
+          "?token=" +
+          localStorage.getItem("user-token")
+      )
+      .then((res) => {
+        // console.log(res.data[0].hash);
+      })
+      .catch((e) => console.log(e));
+  }
   return (
     <>
       <div>
@@ -52,7 +67,7 @@ function StudentMyDocuments() {
                     <th>{doc.name}</th>
                     <th>{doc.type}</th>
                     <th><a href={"https://ipfs.io/ipfs/"+doc.hash}>View</a></th>
-                    <th><a href="#">Delete</a></th>
+                    <th><a href="#" onClick={() => handleDelete(doc.id)}>Delete</a></th>
                   </tr>
           })}
         </table>
