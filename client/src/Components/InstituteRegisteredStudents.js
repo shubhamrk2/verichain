@@ -39,25 +39,29 @@ function InstituteRegisteredStudents() {
       })
       .catch((e) => console.log(e));
   };
-  const handleVerify = async doc_id =>{
+  const handleDocStatus = async (doc_id,req_type) =>{
     await axios
       .get(
         BASE_URL +
-          "verify_document/" +
+          req_type+"_document/" +
           doc_id +
           "?token=" +
           localStorage.getItem("user-token")
       )
       .then((res) => {
         // console.log(res.data[0].hash);
-        const docs = document.map((doc)=>{
-          if(doc.id===doc_id) return {...doc,is_verified:true}
+        const docs = documents.map((doc)=>{
+          if(doc.id===doc_id) {
+            if(req_type==='verify') return {...doc,is_verified:true}
+            else if(req_type==='reject') return {...doc,is_rejected:true}
+          }
           else return doc
         })
         setDocuments(docs)
       })
       .catch((e) => console.log(e));
   }
+  
   return (
     <>
       {loading && <div style={center}>Please Wait, fetching data !</div>}
@@ -90,9 +94,8 @@ function InstituteRegisteredStudents() {
             
           </div>  )}
           <div>
-            {documents &&
-                  documents.map((doc) => {
-                    return (
+            {documents.length>0 &&
+                  (
                       <div>
                         <table className="docTable">
                           <tr>
@@ -100,23 +103,25 @@ function InstituteRegisteredStudents() {
                             <th>Document Name</th>
                             <th>Document Type</th>
                             <th>Document Status</th>
-                            <th><a href="#">View</a></th>
-                            <th><a href="#">Delete</a></th>
+                            <th>View</th>
+                            <th>Verify</th>
+                            <th>Reject</th>
                           </tr>
                           {documents.map((doc)=>{
-                            return <tr>
+                            return <tr key={doc.id}>
                                     <th>{no++}</th>
                                     <th>{doc.name}</th>
                                     <th>{doc.type}</th>
-                                    <th>{doc.is_verified?"Verified":"Not Verified"}</th>
+                                    <th>{doc.is_rejected?"Rejected":(doc.is_verified?"Verified":"Not Verified")}</th>
                                     <th><a href={"https://ipfs.io/ipfs/"+doc.hash} target="_blank">View</a></th>
-                                    <th><a href="#" onClick={() => handleVerify(doc.id)}>Verify</a></th>
+                                    <th>{(!doc.is_rejected && !doc.is_verified) && <a href="#" onClick={() => handleDocStatus(doc.id,"verify")}>Verify</a>}</th>
+                                    <th>{!doc.is_rejected && <a href="#" onClick={() => handleDocStatus(doc.id,"reject")}>Reject</a>}</th>
                                   </tr>
                           })}
                         </table>
                       </div>
-                    );
-                  })}
+                    )
+                  }
               </div>
           
           </div>

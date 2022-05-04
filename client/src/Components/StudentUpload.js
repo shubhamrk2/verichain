@@ -125,9 +125,9 @@ class StudentUpload extends Component {
           {/* eslint-disable-next-line */}
           <h2 className="uploadDocText">Upload Document</h2>
           <select name="selectList" id="selectList">
-              <option value="option 1">Educational</option> {" "}
-              <option value="option 2">Government IDs</option>
-              <option value="option 3">Miscellaneous</option>
+              <option value="Educational">Educational</option> {" "}
+              <option value="Government ID">Government IDs</option>
+              <option value="Miscellaneous">Miscellaneous</option>
           </select>
           <br/>
           <form className="uploadForm" onSubmit={this.onSubmit}>
