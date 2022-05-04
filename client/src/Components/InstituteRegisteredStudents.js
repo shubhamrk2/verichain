@@ -3,6 +3,8 @@ import { BASE_URL } from "../constants";
 import InstituteNavbar from "./InstituteNavbar";
 import axios from "axios";
 import { center } from "../constants";
+import getWeb3 from "../utils/getWeb3";
+import hashContract from "../contracts/Contract.json";
 function InstituteRegisteredStudents() {
   let no = 1;
   const [students, setStudents] = useState([]);
@@ -40,6 +42,39 @@ function InstituteRegisteredStudents() {
       .catch((e) => console.log(e));
   };
   const handleVerify = async doc_id =>{
+    try {
+      console.log("shubham");
+      // Get network provider and web3 instance.
+      const web3 = await getWeb3();
+      console.log("shubham");
+      // console.log("gaurav");
+      // Use web3 to get the user's accounts.
+      const accounts = await web3.eth.getAccounts();
+      console.log(accounts);
+      // Get the contract instance.
+      const networkId = await web3.eth.net.getId();
+      const deployedNetwork = hashContract.networks[networkId];
+      const instance = new web3.eth.Contract(
+        hashContract.abi,
+        deployedNetwork && deployedNetwork.address
+      );
+     
+      this.captureFile = this.captureFile.bind(this);
+      this.onSubmit = this.onSubmit.bind(this);
+      // Set web3, accounts, and contract to the state, and then proceed with an
+      // example of interacting with the contract's methods.
+
+      this.setState({ web3, accounts, contract: instance }, this.runMain);
+      this.setState({ account: accounts[0] });
+    } catch (error) {
+      // Catch any errors for any of the above operations.
+      alert(
+        `Failed to load web3, accounts, or contract. Check console for details.`
+      );
+      console.error(error);
+    }
+
+
     await axios
       .get(
         BASE_URL +
@@ -91,9 +126,10 @@ function InstituteRegisteredStudents() {
                             <th>Document Name</th>
                             <th>Document Type</th>
                             <th>Document Status</th>
-                            <th><a href="#">View</a></th>
-                            <th><a href="#">Delete</a></th>
+                            <th>Action</th>
+                            <th>Verify</th>
                           </tr>
+                          {/* <div className="shownDetails"> */}
                           {documents.map((doc)=>{
                             return <tr>
                                     <th>{no++}</th>
@@ -104,6 +140,7 @@ function InstituteRegisteredStudents() {
                                     <th><a href="#" onClick={() => handleVerify(doc.id)}>Verify</a></th>
                                   </tr>
                           })}
+                          {/* </div> */}
                         </table>
                       </div>
                     );
