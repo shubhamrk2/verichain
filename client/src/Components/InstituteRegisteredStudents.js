@@ -85,7 +85,7 @@ function InstituteRegisteredStudents() {
       )
       .then((res) => {
         // console.log(res.data[0].hash);
-        const docs = document.map((doc)=>{
+        const docs = documents.map((doc)=>{
           if(doc.id===doc_id) return {...doc,is_verified:true}
           else return doc
         })
