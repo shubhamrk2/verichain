@@ -3,6 +3,8 @@ import { BASE_URL } from "../constants";
 import InstituteNavbar from "./InstituteNavbar";
 import axios from "axios";
 import { center } from "../constants";
+import getWeb3 from "../utils/getWeb3";
+import hashContract from "../contracts/Contract.json";
 function InstituteRegisteredStudents() {
   let no = 1;
   const [students, setStudents] = useState([]);
@@ -107,6 +109,7 @@ function InstituteRegisteredStudents() {
                             <th>Verify</th>
                             <th>Reject</th>
                           </tr>
+                          {/* <div className="shownDetails"> */}
                           {documents.map((doc)=>{
                             return <tr key={doc.id}>
                                     <th>{no++}</th>
@@ -118,6 +121,7 @@ function InstituteRegisteredStudents() {
                                     <th>{!doc.is_rejected && <a href="#" onClick={() => handleDocStatus(doc.id,"reject")}>Reject</a>}</th>
                                   </tr>
                           })}
+                          {/* </div> */}
                         </table>
                       </div>
                     )

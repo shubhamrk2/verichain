@@ -22,6 +22,11 @@ a {
   background: url("https://res.cloudinary.com/therealdaaku/image/upload/v1648781946/Verichain/bg1_hticcr.jpg");
 }
 
+/* .shownDetails {
+  display: flex;
+  flex-direction: column;
+} */
+
 .index-content {
   display: flex;
   position: absolute;
