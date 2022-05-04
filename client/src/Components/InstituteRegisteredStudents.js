@@ -50,6 +50,11 @@ function InstituteRegisteredStudents() {
       )
       .then((res) => {
         // console.log(res.data[0].hash);
+        const docs = document.map((doc)=>{
+          if(doc.id===doc_id) return {...doc,is_verified:true}
+          else return doc
+        })
+        setDocuments(docs)
       })
       .catch((e) => console.log(e));
   }
@@ -81,7 +86,11 @@ function InstituteRegisteredStudents() {
                 <button onClick={loadDocuments} className="showDetails">
                   Show Details
                 </button>
-                {documents &&
+                
+            
+          </div>  )}
+          <div>
+            {documents &&
                   documents.map((doc) => {
                     return (
                       <div>
@@ -109,8 +118,7 @@ function InstituteRegisteredStudents() {
                     );
                   })}
               </div>
-            )}
-            
+          
           </div>
           <footer className="insFooter">
             <p>
