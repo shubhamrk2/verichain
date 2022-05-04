@@ -36,7 +36,7 @@ function SignUpStudent() {
                 <input id="name" name="name" type="text" required placeholder="Name"/>
                 <input id="email" name="email" type="email" required placeholder="Email" />
                 <input id="password" name="password" type="password" required placeholder="Password" />
-                <a><button id='signup-button' onClick={handleSignUp}>Sign Up</button></a>
+                <a href='/studentdetails'><button id='signup-button' onClick={handleSignUp}>Sign Up</button></a>
                 <p style={{"text-align":"center","color":"red"}}>{error}</p>
             </form>
             </div>
