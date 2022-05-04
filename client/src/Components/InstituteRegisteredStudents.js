@@ -41,14 +41,15 @@ function InstituteRegisteredStudents() {
       })
       .catch((e) => console.log(e));
   };
-  const handleDocStatus = async (doc_id,req_type) =>{
+  const handleDocStatus = async (doc_id,req_type,user_id,doc_name) =>{
+    const token = localStorage.getItem("user-token")
     await axios
       .get(
         BASE_URL +
           req_type+"_document/" +
           doc_id +
           "?token=" +
-          localStorage.getItem("user-token")
+          token
       )
       .then((res) => {
         // console.log(res.data[0].hash);
@@ -60,8 +61,14 @@ function InstituteRegisteredStudents() {
           else return doc
         })
         setDocuments(docs)
+        const status = req_type==='verify'?"Verified":"Rejected";
+        const mailData = new FormData;
+        mailData.append('token',token)
+        mailData.append('content','<h1>Your Document ( '+doc_name+' ) is '+status+'</h1>');
+        // mailData.append('doc_name',doc_name);
+        axios.post(BASE_URL+'send_mail/'+user_id,mailData);
       })
-      .catch((e) => console.log(e));
+      .catch((err) => console.log(err));
   }
   
   return (
@@ -117,8 +124,8 @@ function InstituteRegisteredStudents() {
                                     <th>{doc.type}</th>
                                     <th>{doc.is_rejected?"Rejected":(doc.is_verified?"Verified":"Not Verified")}</th>
                                     <th><a href={"https://ipfs.io/ipfs/"+doc.hash} target="_blank">View</a></th>
-                                    <th>{(!doc.is_rejected && !doc.is_verified) && <a href="#" onClick={() => handleDocStatus(doc.id,"verify")}>Verify</a>}</th>
-                                    <th>{!doc.is_rejected && <a href="#" onClick={() => handleDocStatus(doc.id,"reject")}>Reject</a>}</th>
+                                    <th>{(!doc.is_rejected && !doc.is_verified) && <a href="#" onClick={() => handleDocStatus(doc.id,"verify",doc.user_id,doc.name)}>Verify</a>}</th>
+                                    <th>{!doc.is_rejected && <a href="#" onClick={() => handleDocStatus(doc.id,"reject",doc.user_id,doc.name)}>Reject</a>}</th>
                                   </tr>
                           })}
                           {/* </div> */}
