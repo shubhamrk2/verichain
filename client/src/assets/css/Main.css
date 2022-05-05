@@ -495,7 +495,7 @@ td {
 /* Student Upload */
 
 .fileUpload {
-  width: 35%;
+  width: 100%;
 }
 
 .dash {
@@ -520,7 +520,7 @@ td {
 }
 
 .fileUploadBtn {
-  width: 40%;
+  width: 60%;
 }
 
 /* .viewDoc {
@@ -831,16 +831,13 @@ a.ins:hover {
 }
 
 #selectList {
-  width: 10%;
+  width: 60%;
 }
 
 .registeredCard::-webkit-scrollbar {
   display: none;
 }
 
-#selectList {
-  width: 30%;
-}
 
 /* Student My Documents */
 
