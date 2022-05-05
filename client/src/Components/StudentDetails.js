@@ -32,6 +32,9 @@ function StudentDetails() {
         <input type='text' name='pincode' required placeholder="Pin Code"></input>
         <input type='text' name='state' required placeholder="State"></input>
         <input type='text' name='country' required placeholder="Country"></input>
+        <input type='text' name='roll_no' required placeholder="Roll Number"></input>
+        <input type='text' name='branch' required placeholder="Branch"></input>
+        <input type='text' name='semester' required placeholder="Semester"></input>
         <button type='submit' onClick={handleSubmit}>Submit</button>
       </form>
 
