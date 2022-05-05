@@ -58,15 +58,15 @@ function StudentMyDocuments() {
             <th>Sr. No</th>
             <th>Document Name</th>
             <th>Document Type</th>
-            <th><a href="#">View</a></th>
-            <th><a href="#">Delete</a></th>
+            <th>View</th>
+            <th>Delete</th>
           </tr>
           {documents.map((doc)=>{
             return <tr>
                     <th>{no++}</th>
                     <th>{doc.name}</th>
                     <th>{doc.type}</th>
-                    <th><a href={"https://ipfs.io/ipfs/"+doc.hash}>View</a></th>
+                    <th><a href={"https://ipfs.io/ipfs/"+doc.hash} target='_blank'>View</a></th>
                     <th><a href="#" onClick={() => handleDelete(doc.id)}>Delete</a></th>
                   </tr>
           })}

@@ -137,12 +137,12 @@ class StudentUpload extends Component {
               onChange={this.captureFile}
             />
             <div className="viewDoc">
-              {this.state.ipfsHash && (
+              {/* {this.state.ipfsHash && (
                 <img
                   src={`https://ipfs.io/ipfs/${this.state.ipfsHash}`}
                   alt="image"
                 />
-              )}
+              )} */}
             </div>
             <input className="fileUploadBtn" type="submit" />
           </form>
