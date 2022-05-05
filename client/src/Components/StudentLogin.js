@@ -20,7 +20,11 @@ function StudentLogin() {
             const user = await axios.get(BASE_URL+'get_user?token='+res.data.token)
             localStorage.setItem('user-id',user.data.user.id)
 
+            const data = await axios.get(BASE_URL+'is_registered?token='+localStorage.getItem('user-token'));
+            if(data.data.is_registered)
             window.location.href="/studentprofile"
+            else
+            window.location.href="/user-data"
             // console.log(res.data)
         }
         else{

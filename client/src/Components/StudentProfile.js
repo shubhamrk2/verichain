@@ -62,11 +62,17 @@ function StudentProfile() {
       const formData =new FormData;
       formData.append('token',localStorage.getItem('user-token'))
       inputs.forEach(i=>{
-          formData.append(i.getAttribute('name'),i.getAttribute('value'));
+          const val = i.getAttribute('value')
+          formData.append(i.getAttribute('name'),val);
         }
       )
+      formData.append('gender',document.querySelector('#gender').value)
+      formData.append('institute_name',document.querySelector('#institute_name').value)
+      formData.append('course_name',document.querySelector('#course_name').value)
+      formData.append('state',document.querySelector('#state').value)
       // console.log(inputs)
       const res = await axios.post(BASE_URL+'update_user_data',formData);
+      setUserData(res.data.data)
       // console.log(res)
     }
     else{
@@ -151,9 +157,9 @@ function StudentProfile() {
               <td className='data-block'>{userData.gender}</td>
               <div className='field-container'>
               {/* <TextField inputProps={{ className: "input-fields", name: "gender" }} variant="standard" size="small" value={userData.gender} onChange={handleInput} /> */}
-              <select>
-                  <option>Male</option>
-                  <option>Female</option>
+              <select name='gender' id='gender'>
+                  <option value='Male'>Male</option>
+                  <option value='Female'>Female</option>
                 </select>
               
               {/* <Select inputProps={{ className: "input-fields", name: "gender" }} variant="standard" size="small" value={gender} onChange={(e) => setGender(e.target.value)} >
@@ -168,13 +174,13 @@ function StudentProfile() {
               </th>
               <td className='data-block'>{userData.dob}</td>
               <div className='field-container'>
-              {/* <TextField inputProps={{ className: "input-fields", name: "dob" }} variant="standard" size="small" value={userData.dob} onChange={handleInput} /> */}
-              <DatePicker 
+              <TextField inputProps={{ className: "input-fields", name: "dob" }} variant="standard" size="small" value={userData.dob} onChange={handleInput} />
+              {/* <DatePicker 
               selected={userData.dob ? moment(userData.dob) : null}
               onChange={date => setUserData({...userData,dob:date})}
               className='input-fields'
               name='dob'
-              />
+              /> */}
               {/* <KeyboardDatePicker
                 placeholder="10/10/2022"
                 value={dob}
@@ -221,7 +227,7 @@ function StudentProfile() {
               <div className='field-container'>
 
               {/* <TextField inputProps={{ className: "input-fields", name: "institute_name" }} variant="standard" size="small" value={userData.institute_name} onChange={handleInput} /> */}
-              <select>
+              <select id='institute_name'>
                   <option>JSS Academy of Technical Education, Noida (091)</option>
                   <option>ABES Engineering College, Ghaziabad (032)</option>
                   <option>Ajay Kumar Garg Engineering College, Ghaziabad (027)</option>
@@ -238,7 +244,7 @@ function StudentProfile() {
 
               {/* <TextField inputProps={{ className: "input-fields", name: "course_name" }} variant="standard" size="small" value={userData.course_name} onChange={handleInput} /> */}
 
-              <select>
+              <select id='course_name'>
                   <option>Computer Science Engineering (CSE)</option>
                   <option>Electronics & Communication Engineering (ECE)</option>
                   <option>Information Technology (IT)</option>
@@ -296,7 +302,7 @@ function StudentProfile() {
               <div className='field-container'>
 
               {/* <TextField inputProps={{ className: "input-fields", name:"state" }} variant="standard" size="small" value={userData.state} onChange={handleInput} /> */}
-              <select>
+              <select id='state'>
                   <option>Andaman and Nicobar Islands</option>
                   <option>Andhra Pradesh</option>
                   <option>Arunachal Pradesh</option>

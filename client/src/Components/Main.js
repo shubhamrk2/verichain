@@ -29,6 +29,7 @@ function Main() {
         <Routes >
           <Route exact path='/' element={<SignInUp/>} />
           <Route exact path='/loginstudent' element={<StudentLogin/>} />
+          <Route exact path='/user-data' element={<StudentDetails/>} />
           <Route exact path='/signupstudent' element={<StudentSignUp/>}/>
           <Route exact path='/studentupload' element={<StudentUpload />}/>
           <Route exact path='/mydocuments' element={<StudentMyDocuments />} />
